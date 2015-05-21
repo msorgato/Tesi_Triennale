@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=capitoli\capitolo-1.tex
 
 [Frame0_View0,0]
-TopLine=10
-Cursor=1766
+TopLine=13
+Cursor=1751
 
 [Frame1]
 Flags=0
@@ -128,7 +128,25 @@ Document=capitoli\capitolo-7.tex
 TopLine=0
 Cursor=0
 
+[Frame7]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1008
+NormalPos.bottom=582
+Class=LaTeXView
+Document=glossario.tex
+
+[Frame7_View0,0]
+TopLine=47
+Cursor=2641
+
 [SessionInfo]
-FrameCount=7
+FrameCount=8
 ActiveFrame=0
 

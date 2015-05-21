@@ -6,6 +6,9 @@
 
 \newacronym[description={\glslink{apig}{Application Program Interface}}]
     {api}{API}{Application Program Interface}
+		
+\newacronym[description={\glslink{restg}{Representational State Transfer}}]
+		{rest}{REST}{Representational State Transfer}
 
 \newacronym[description={\glslink{umlg}{Unified Modeling Language}}]
     {uml}{UML}{Unified Modeling Language}
@@ -15,6 +18,7 @@
 %**************************************************************
 %\renewcommand{\glossaryname}{Glossario}
 
+
 \newglossaryentry{apig}
 {
     name=\glslink{api}{API},
@@ -23,6 +27,29 @@
     description={in informatica con il termine \emph{Application Programming Interface API} (ing. interfaccia di programmazione di un'applicazione) si indica ogni insieme di procedure disponibili al programmatore, di solito raggruppate a formare un set di strumenti specifici per l'espletamento di un determinato compito all'interno di un certo programma. La finalità è ottenere un'astrazione, di solito tra l'hardware e il programmatore o tra software a basso e quello ad alto livello semplificando così il lavoro di programmazione}
 }
 
+\newglossaryentry{backend}
+{
+		name=\glslink{backend}{Backend},
+		sort=backend,
+		description={un'applicazione o un programma backend serve indirettamente come supporto ai servizi del frontend, solitamente essendo vicino alla risorsa richiesta o avendo la capacità di comunicare con data risorsa. L'applicazione backend può interagire direttamente con il frontend oppure, forse più tipicamente, è un programma chiamato da un programma intermediario che si inserisce tra le attività del frontend e del backend.
+		}
+}
+
+\newglossaryentry{frontend}
+{
+		name=\glslink{frontend}{Frontend},
+		sort=frontend,
+		description={nel campo della progettazione software il front end è la parte di un sistema software che gestisce l'interazione con l'utente o con sistemi esterni che producono dati di ingresso (es. interfaccia utente con un form).}
+}
+
+\newglossaryentry{restg}
+{
+		name=\glslink{rest}{REST},
+		text=REST,
+		sort=rest,
+		description={REST si riferisce ad un insieme di principi di architetture di rete, i quali delineano come le risorse sono definite e indirizzate. Il termine è spesso usato nel senso di descrivere ogni semplice interfaccia che trasmette dati su HTTP senza un livello opzionale.}
+}
+		
 \newglossaryentry{umlg}
 {
     name=\glslink{uml}{UML},
