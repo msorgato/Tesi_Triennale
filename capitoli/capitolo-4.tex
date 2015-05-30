@@ -55,7 +55,21 @@ Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e 
 \hline\hline
 \textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 \hline
-RFN-1     & L'interfaccia permette di configurare il tipo di sonde del test & UC1 \\
+RFN-1     & (FARLOCCO)L'interfaccia permette di configurare il tipo di sonde del test & UC1 \\
+RFN-1 & L'applicazione deve reagire ad un'errata autenticazione tramite reindirizzamento all'interfaccia di login & UCN \\
+RFN-2 & L'applicazione deve reagire alla scadenza di una sessione tramite reindirizzamento all'interfaccia di login & UCN \\
+RFN-3 & L'applicazione non deve permettere l'accesso anonimo al sistema, tranne che per l'interfaccia di login & UCN \\
+RFN-4 & All'avvio, l'applicazione deve controllare se esiste una sessione attiva & UCN \\
+RFN-5 & In caso di sessione attiva, l'utente deve essere reindirizzato alla Dashboard se la sessione è valida & UCN \\
+RFN-6 & In caso di sessione non attiva o non valida, l'utente deve essere riportato alla schermata di login & UCN \\
+RFN-7 & L'applicazione deve poter consentire ad un utente registrato di effettuare l'autenticazione & UCN \\
+RFN-8 & L'utente autenticato deve poter visionare i propri dati dopo il login nel sistema & UCN \\
+RFN-9 & L'utente autenticato deve poter effettuare il logout dal sistema & UCN \\
+RFD-1 & Il sistema deve implementare una struttura gerarchica & UCN \\
+RFD-1.1 & L'interfaccia mostrata in base al tipo di ogni utente deve essere adattata al tipo dello stesso & UCN \\
+RFD-1.1.1 & L'amministratore di un progetto deve poter vedere le persone assegnate a quel progetto & UCN \\
+RFD-2 & L'utente deve ricevere un feedback nell'interfaccia ogni volta che avvenga un errore di comunicazione col server & UCN \\
+RFO-1 & Per tutti i dati presentati tramite lista va implementato l'infinite scroll & UCN \\
 \hline
 \end{tabularx}
 \end{table}%

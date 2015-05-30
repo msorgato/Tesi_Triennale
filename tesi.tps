@@ -71,8 +71,8 @@ Class=LaTeXView
 Document=capitoli\capitolo-4.tex
 
 [Frame3_View0,0]
-TopLine=54
-Cursor=0
+TopLine=67
+Cursor=3757
 
 [Frame4]
 Flags=0
@@ -148,5 +148,5 @@ Cursor=2641
 
 [SessionInfo]
 FrameCount=8
-ActiveFrame=0
+ActiveFrame=3
 
