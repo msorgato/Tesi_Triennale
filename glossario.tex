@@ -7,8 +7,14 @@
 \newacronym[description={\glslink{apig}{Application Program Interface}}]
     {api}{API}{Application Program Interface}
 
+\newacronym[description={\glslink{crudg}{Create Read Update Delete}}]
+	{crud}{CRUD}{Create Read Update Delete}
+
 \newacronym[description={\glslink{hateoasg}{Hypermedia as the Engine of Application State}}]
-		{hateoas}{HATEOAS}{Hypermedia as the Engine of Application State}
+	{hateoas}{HATEOAS}{Hypermedia as the Engine of Application State}
+
+\newacronym[description={\glslink{ideg}{Integrated Development Environment}}]
+	{ide}{IDE}{Integrated Development Environment}
 
 \newacronym[description={\glslink{mvcg}{Model View Controller}}]
 	{mvc}{MVC}{Model View Controller}
@@ -46,6 +52,14 @@
 	description={un'applicazione o un programma backend serve indirettamente come supporto ai servizi del frontend, solitamente essendo vicino alla risorsa richiesta o avendo la capacità di comunicare con data risorsa. L'applicazione backend può interagire direttamente con il frontend oppure, forse più tipicamente, è un programma chiamato da un programma intermediario che si inserisce tra le attività del frontend e del backend.}
 }
 
+\newglossaryentry{crudg}
+{
+	name=\glslink{crud}{CRUD},
+	text=Create Read Update Delete,
+	sort=crud,
+	description={con la sigla \emph{CRUD} si rappresenta l'insieme delle quattro operazioni basilari su dei dati persistenti, ovvero creazione, lettura, modifica ed eliminazione.}
+}
+
 \newglossaryentry{frontend}
 {
 	name=\glslink{frontend}{Frontend},
@@ -55,10 +69,18 @@
 
 \newglossaryentry{hateoasg}
 {
-	name=\glslink{hateoas}{HATEOAS}
+	name=\glslink{hateoas}{HATEOAS},
 	text=HATEOAS,
 	sort=hateoas,
 	description={vincolo delle applicazioni basate su architettura REST che le distingue dalla maggior parte delle altre applicazioni web. Il principio consiste in un client che interagisce con un'applicazione web esclusivamente attraverso gli ipermedia forniti dinamicamente dai server dell'applicazione stessa. Un client REST non necessita così di nessuna conoscenza a priori per interagire con una particolare applicazione o server che vada oltre la normale comprensione degli ipermedia.}
+}
+
+\newglossaryentry{ideg}
+{
+	name=\glslink{ide}{IDE}
+	text=IDE,
+	sort=ide,
+	description={si traduce in italiano come Ambiente di Sviluppo Integrato. Un IDE è un software che, in fase di programmazione, aiuta i programmatori nello sviluppo del codice sorgente di un programma. Spesso l'IDE aiuta lo sviluppatore segnalando errori di sintassi del codice direttamente in fase di scrittura, oltre a tutta una serie di strumenti e funzionalità di supporto alla fase di sviluppo e debugging.}
 }
 
 \newglossaryentry{mvcg}
