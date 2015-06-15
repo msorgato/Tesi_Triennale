@@ -12,3 +12,16 @@
 
 %**************************************************************
 \section{Processo sviluppo prodotto}
+
+\subsection{Test Driven Developement}
+Il modello di sviluppo Test Driven (guidato dai test) prevede che lo sviluppo di ogni unità software avvenga soltanto dopo aver scritto il corrispondente test sulla base delle specifiche dell’unità stessa.\\
+Il dovere di ogni programmatore che segue questo modello è quello di scrivere il minor quantitativo di codice necessario a far validare il test, minimizzando gli sprechi e provando la correttezza del prodotto, delegando il refactoring stilistico ad un momento successivo, in cui si ha già un codice testato e funzionante.\\
+Il motto dello sviluppo Test Driven è appunto “Red, Green, Refactor”; la procedura da seguire prevista da questa metodologia è la seguente:
+\begin{enumerate}
+		\item scrivere un “singolo” test di unità che descrive una funzionalità del programma;
+		\item eseguire il test, il quale dovrebbe fallire, dato che il programma non presenta ancora la feature descritta (da qui, la fase Rossa);
+		\item scrivere la quantità minima di codice necessaria far passare il test (fase Verde);
+		\item eseguire il Refactoring del codice, in modo da eliminare eventuali ridondanze e superficialità;
+		\item ripetere, accumulando test di unità con il passare dello sviluppo.
+\end{enumerate}
+Il framework AngularJS è stato creato appositamente per rendere il testing più efficiente e semplice possibile, grazie a molte funzionalità focalizzate al testing già comprese all’interno del framework. Questa scelta è stata compiuta perché JavaScript ha una grandissima potenza espressiva, ma quasi nessun controllo da parte del compilatore, il che rende necessaria la costante presenza dei test nello sviluppo con questo linguaggio.
