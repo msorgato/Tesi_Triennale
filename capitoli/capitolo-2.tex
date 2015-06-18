@@ -13,6 +13,33 @@
 %**************************************************************
 \section{Processo sviluppo prodotto}
 
+\subsection{Agile}
+Agile è una metodologia di sviluppo nata in contrapposizione ad altri modelli più stringenti e formali, quali ad esempio il modello a Cascata o a Spirale.\\
+I principi generali dell’Agile Programming sono descritti nell’Agile Manifesto\footcite{site:agile-manifesto}, e possono essere riassunti in quattro punti cardine:
+\begin{itemize}
+	\item \emph{individui e interazioni:} organizzazione e motivazione autonoma sono importanti, come lo sono le interazioni personali come la condivisione dello stesso luogo di sviluppo;
+	\item \emph{software funzionante:} un prodotto che funziona è più utile e meglio accettato di documenti cartacei presentati agli acquirenti durante i meeting;
+	\item \emph{collaborazione con gli acquirenti:} i requisiti non possono essere pienamente individuati all’inizio del ciclo di sviluppo del software. Perciò l’interazione con i clienti e gli stakeholder è estremamente importante;
+	\item \emph{responsività al cambiamento:} i metodi agile sono focalizzati sul fornire risposte veloci al cambiamento e allo sviluppo continuo.
+\end{itemize}
+Lo sviluppo Agile permette di valutare ed eventualmente correggere la direzione durante il processo stesso. Questo risultato è ottenuto attraverso brevi e regolari iterazioni di lavoro, alla fine delle quali ogni team deve presentare un incremento del prodotto, considerandolo come una nuova feature applicabile e funzionante. Concentrandosi sulla ripetizione di cicli di lavoro brevi e definiti, proporzionati alla funzionalità da consegnare, le metodologie Agile si definiscono “iterative” o “incrementali”. Nel modello a cascata, i team di sviluppo hanno una sola opportunità di di realizzare un aspetto del progetto nel modo giusto. Nel paradigma Agile, ogni aspetto dello sviluppo - requisiti, progettazione, ecc. - è continuamente rivisitato. Quando un team si ferma e rivaluta la direzione di un progetto ogni due settimane, è possibile cambiare tale direzione con facilità.\\
+Questo approccio “ispeziona-e-adatta” riduce i costi e il tempo di consegna dello sviluppo. Dato che i vari team possono sviluppare software nello stesso tempo in cui individuano i requisiti, la “paralisi dell’analisi” ha meno probabilità di bloccare i progressi di un team. E siccome il ciclo di lavoro di un team è limitato a due settimane, gli stakeholder hanno opportunità ricorrenti di analizzare i rilasci del software e il loro feedback dal mercato.
+
+\subsubsection{Kanban}
+%storia
+Kanban è un framework usato per implementare la metodologia agile. Negli anni ‘40, Toyota ottimizzò i suoi processi modellandoli come se fossero degli scaffali in un supermercato. I supermercati offrono una quantità di prodotti atti a soddisfare con il minimo spreco la domanda dei consumatori. Siccome i livelli di inventario sono conseguenti ai pattern di consumazione, il supermercato ottiene una significante efficienza ed ottimizzazione nella gestione dell’inventario.\\
+Quando Toyota portò questa idea ai suoi piani di lavoro, i team (come ad esempio il team che aggiunge le portiere al telaio dell’auto) consegnavano una carta, o “kanban”, agli altri dipendenti (ad esempio, ai team che assemblano le portiere) per segnalare di aver ecceduto la capacità e di essere pronti a ritirare più materiale. Anche se la tecnologia di segnalazione si sia evoluta, questo sistema è ancora al centro della produzione “just in time”.\\
+Kanban presenta lo stesso comportamento per i team software. Tramite la comparazione dell’ammontare del lavoro in progresso rispetto alla capacità del team, kanban fornisce agli stessi opzioni di pianificazione più flessibili, output più veloci, miglior concentrazione sui singoli compiti e trasparenza durante il ciclo di sviluppo.\\
+%metodologia
+Kanban è un metodo di gestione della consapevolezza del lavoro con un’enfasi particolare sulla consegna “just in time”, assicurandosi nel mentre che i membri del team non abbiano troppo lavoro rispetto alle loro capacità di carico. In questo approccio, il processo, dalla definizione dei task alla consegna al cliente, è mostrato visivamente ai partecipanti. I membri del team estraggono ogni unità di lavoro da una coda.
+Kanban nel contesto dello sviluppo software può essere inteso come un sistema di gestione di processo visuale, che dice cosa produrre, quando e in quale quantità produrlo - ispirato dal sistema di produzione Toyota.\\
+Nella sua forma più basilare, un sistema di kanban consiste di una grande lavagna appesa ad un muro con delle carte o dei postit organizzati in colonne con dei numeri su ogni colonna\footcite{site:kanban}.\\
+Le carte rappresentano le unità di lavoro mentre attraversano il processo di sviluppo, rappresentato dalle colonne.\\
+I limiti sono la differenza sostanziale tra una lavagna Kanban e un’altra storyboard qualsiasi. Limitando l’ammontare di Work-In-Progress (WIP) ad ogni passo del processo, si previene la sovrapproduzione di risorse e si rivelano dinamicamente i colli di bottiglia, così che possano essere presi dei provvedimenti adattativi il prima possibile.\\
+Ogni team può quindi avere una determinata quantità di lavoro in esecuzione per unità di tempo. Così facendo si limitano gli sprechi di tempo dovuti al cambio di contesto chiesto se si implementa un certo numero di User Stories parallelamente. Ogni membro del team, ogniqualvolta finisce uno step del processo di realizzazione di una User Story, sposta la scheda corrispondente nella colonna successiva della kanban, la quale proseguirà nel suo processo, mentre lo sviluppatore potrà passare all’implementazione di una nuova User Story.
+
+
+
 \subsection{Test Driven Developement}
 Il modello di sviluppo Test Driven (guidato dai test) prevede che lo sviluppo di ogni unità software avvenga soltanto dopo aver scritto il corrispondente test sulla base delle specifiche dell’unità stessa.\\
 Il dovere di ogni programmatore che segue questo modello è quello di scrivere il minor quantitativo di codice necessario a far validare il test, minimizzando gli sprechi e provando la correttezza del prodotto, delegando il refactoring stilistico ad un momento successivo, in cui si ha già un codice testato e funzionante.\\
