@@ -17,7 +17,7 @@ Class=LaTeXView
 Document=capitoli\capitolo-1.tex
 
 [Frame0_View0,0]
-TopLine=23
+TopLine=12
 Cursor=1975
 
 [Frame1]
@@ -35,7 +35,7 @@ Class=LaTeXView
 Document=capitoli\capitolo-4.tex
 
 [Frame1_View0,0]
-TopLine=31
+TopLine=36
 Cursor=7134
 
 [Frame2]
@@ -53,8 +53,8 @@ Class=LaTeXView
 Document=capitoli\capitolo-2.tex
 
 [Frame2_View0,0]
-TopLine=26
-Cursor=3213
+TopLine=139
+Cursor=11276
 
 [Frame3]
 Flags=0
@@ -107,10 +107,28 @@ Class=LaTeXView
 Document=capitoli\capitolo-3.tex
 
 [Frame5_View0,0]
-TopLine=0
-Cursor=567
+TopLine=15
+Cursor=1985
+
+[Frame6]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1008
+NormalPos.bottom=582
+Class=LaTeXView
+Document=tesi.tex
+
+[Frame6_View0,0]
+TopLine=27
+Cursor=1521
 
 [SessionInfo]
-FrameCount=6
+FrameCount=7
 ActiveFrame=2
 
