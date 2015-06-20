@@ -40,13 +40,37 @@ I limiti sono la differenza sostanziale tra una lavagna Kanban e un’altra stor
 Ogni team può quindi avere una determinata quantità di lavoro in esecuzione per unità di tempo. Così facendo si limitano gli sprechi di tempo dovuti al cambio di contesto chiesto se si implementa un certo numero di User Stories parallelamente. Ogni membro del team, ogniqualvolta finisce uno step del processo di realizzazione di una User Story, sposta la scheda corrispondente nella colonna successiva della kanban, la quale proseguirà nel suo processo, mentre lo sviluppatore potrà passare all’implementazione di una nuova User Story.
 
 \paragraph{Procedure}
-
-
+Le procedure seguite nell'applicazione della metodologia Kanban si appoggiano ai doftware aziendali rilasciati da Atlassian, ovvero JIRA e STASH.\\
+In particolare, l'implementazione di una singola User Story passa attraverso diversi passi definiti.\\
+Dal lato organizzativo della stesura e realizzazione delle User Stories e della Kanban vera e propria, i passi da seguire sono stati i seguenti, applicati al framework JIRA:
+\begin{enumerate}
+	\item il Responsabile di progetto scrive la User Story;
+	\item il Responsabile decide a chi assegnare l'implementazione della User Story;
+	\item lo sviluppatore designato prende in carico il ticket aperto, contrassegnandolo come "In Progress";
+	\item lo sviluppatore realizza la funzionalità descritta nella User Story della comanda;
+	\item lo sviluppatore notifica l'avvenuta implementazione della funzionalità contrassegnando il ticket come "Done";
+	\item il Responsabile viene notificato dell'avvenuta realizzazione e provvede all'inserimento della nuova funzionalità nel progetto.
+\end{enumerate}
+A questa procedura si associa anche la gestione vera e propria dei sorgenti aziendali, memorizzati in repository acceduti tramite il framework STASH. L'implementazione di ogni feature prevede il passaggio per vari punti, necessari alla stabilità e all'organizzazione del sistema.\\
+La procedura da seguire all'interno del framework STASH è la seguente:
+\begin{enumerate}
+	\item prendere in carico una User Story dal backlog;
+	\item creare un nuovo branch dall'attuale branch \emph{develop} del repository;
+	\item implementare la funzionalità presa in carico, ricordandosi di effettuare commit periodici con messaggi esplicativi del lavoro effettuato;
+	\item al termine dell'implementazione, assicurarsi che i test disegnati per le unità implementate passino, così da non introdurre errori di unità nel sistema;
+	\item una volta appurato che i test sono positivi, proseguire con la richiesta di pull nel branch \emph{develop} da notificare al Responsabile del progetto.
+\end{enumerate}
+A questo punto si può verificare un imprevisto, ovvero che nel tempo in cui viene implementata una User Story, il branch \emph{develop} subisca delle modifiche. Questo fatto comporta una pull del \emph{develop} nel branch attuale ed una conseguente risoluzione de conflitti che potrebbero venirsi a creare. Dopodiché si prosegue con la procedura:
+\begin{enumerate}[resume]
+	\item esaminare la risposta del Responsabile; in caso di approvazione, la procedura termina;
+	\item in caso di mancata approvazione della pull request, esaminare i punti in cui vengono alzate obiezioni da parte del Responsabile apportare le dovute modifiche al codice;
+	\item ritornare al punto 4 e iterare fino ad avvenuta approvazione della pull request.
+\end{enumerate}
 
 
 \subsection{Test Driven Developement}
 Il modello di sviluppo Test Driven (guidato dai test) prevede che lo sviluppo di ogni unità software avvenga soltanto dopo aver scritto il corrispondente test sulla base delle specifiche dell’unità stessa.\\
-Il dovere di ogni programmatore che segue questo modello è quello di scrivere il minor quantitativo di codice necessario a far validare il test, minimizzando gli sprechi e provando la correttezza del prodotto, delegando il refactoring stilistico ad un momento successivo, in cui si ha già un codice testato e funzionante.\\
+Il dovere di ogni programmatore che segue questo modello è quello di scrivere il minimo quantitativo di codice necessario a far validare il test, minimizzando gli sprechi e provando la correttezza del prodotto, delegando il refactoring stilistico ad un momento successivo, in cui si ha già un codice testato e funzionante.\\
 Il motto dello sviluppo Test Driven è appunto “Red, Green, Refactor”; la procedura da seguire prevista da questa metodologia è la seguente:
 \begin{enumerate}
 	\item scrivere un “singolo” test di unità che descrive una funzionalità del programma;

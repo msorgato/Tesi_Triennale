@@ -15,16 +15,22 @@ Questo capitolo tratterà l'organizzazione temporale del progetto, ovvero la sua
 \section{Introduzione al progetto}
 
 %**************************************************************
-%\section{Analisi preventiva dei rischi}
+\section{Analisi preventiva dei rischi}
 
-%Durante la fase di analisi iniziale sono stati individuati alcuni possibili rischi a cui si potrà andare incontro.
-%Si è quindi proceduto a elaborare delle possibili soluzioni per far fronte a tali rischi.\\
+Durante la fase di analisi iniziale sono stati individuati alcuni possibili rischi a cui si potrà andare incontro.
+Si è quindi proceduto a elaborare delle possibili soluzioni per far fronte a tali rischi.\\
 
-%\begin{risk}{Performance del simulatore hardware}
-%    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
-%    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
-%    \label{risk:hardware-simulator} 
-%\end{risk}
+\begin{risk}{Conflitti nell'implementazione parallela di User Stories}
+		\riskdescription{durante lo svolgimento di un progetto, ogni implementazione di una User Story deve trovarsi su un branch separato, derivato dal branch \emph{develop}. Può quindi accadere che, in determinati casi, l'esecuzione di ogni ticket e il suo assorbimento nel sistema non siano sequenziali, in quanto il Responsabile di progetto può non essere sempre presente. Quindi, nel caso in cui si realizzino più feature senza avere una pull request alla fine di ognuna, il codice che poi dovrà essere inserito nel sistema darà quasi certamente conflitto nella fase di \emph{merge}}
+		\risksolution{sollecitare il Responsabile di progetto all'analisi dei cambiamenti apportati ad ogni feature, notificandolo periodicamente sullo stato di esecuzione del ticket, in modo che il Responsabile sia pronto all'esaminazione della User Story implementata in modo più repentino}
+		\label{risk:merge-conflict}
+\end{risk}
+
+\begin{risk}{Performance del simulatore hardware}
+    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
+    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+    \label{risk:hardware-simulator} 
+\end{risk}
 
 %**************************************************************
 \section{Requisiti e obiettivi}
