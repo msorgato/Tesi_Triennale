@@ -45,18 +45,25 @@ La Governance è la risposta per l’azienda che oggi è chiamata a confrontarsi
 
 \paragraph{Ricerca e innovazione}
 Progettare e costruire un’applicazione a valore aggiunto significa conoscere le possibilità e potenzialità della tecnologia. Il valore aggiunto è dato dal poter garantire competenze sempre aggiornate, continue attività di ricerca e di prototipizzazione su temi innovativi, capacità consolidate nel disegno di architetture complesse e di integrazione, forti partnership tecnologiche con i principali leader di mercato. Tutto ciò sostenuto da una forte, determinata quanto ragionevole propensione all’innovazione.
+
 %**************************************************************
+
 \section{L'idea}
 
 Il progetto \myTitle{} nasce come strumento di gestione interna delle competenze dei dipendenti e dei progetti presenti in azienda. L'obiettivo di tale progetto è una migliore organizzazione del personale dedicato ai vari progetti, con una conseguente maggiore efficienza ed efficacia nell'assegnazione dei ruoli nei processi ed attività. Fino ad ora, all'interno di IKS, tale compito veniva svolto dalla consultazione e modifica di un foglio elettronico \emph{Excel}. Questa soluzione, oltre ad essere poco pratica e difficilmente manutenibile, ha portato all'esigenza di uno strumento più specifico ed espandibile. Da qui la creazione del progetto \myTitle{}.\\
 Lo strumento \myTitle{} è pensato per essere utilizzato da diverse tipologie di utenti, dal singolo sviluppatore al project manager.\\
 L'applicazione sarà composta da un \gls{frontend} realizzato in \emph{AngularJS}, un \gls{backend} realizzato tramite \gls{spring} e un database di persistenza. L'attività di Stage ha riguardato la realizzazione del frontend e la definizione delle \gls{api} \gls{rest} del backend.\\
-Il personale aziendale inserisce le proprie competenze nel sistema, selezionate a partire da un elenco precompilato. 
-Chi ha compiti di gestione utilizza lo strumento per vedere quali risorse può utilizzare per un progetto. Ogni utente potrà inoltre tenere traccia dei vari progetti a cui ha collaborato, delle competenze acquisite e dei vari attestati ottenuti durante la carriera aziendale e non.
-Si prefissa quindi come obiettivo la creazione di un portale aziendale unificato per una migliore gestione del personale ed il suo dislocamento all’interno dei progetti aziendali, oltre che alla gestione dei curricula vitae del personale aziendale.
+L'utente finale sviluppatore può vedere \myTitle{} come una sorta di curriculum digitale ampliato, in cui poter inserire le proprie competenze riconosciute, le esperienze acquisite ed i progetti a cui ha preso parte. Nella propria \emph{dashboard}, l'utente finale può gestire le proprie informazioni e richiedere l'inserimento di nuove entità, come nuovi progetti a cui ha preso parte, nuove skill acquisite, certificazioni esterne o interne o altri titoli formativi e le sue esperienze lavorative pregresse.\\ 
+Chi ha compiti di gestione (ad esempio la figura del Responsabile di progetto), utilizza lo strumento per vedere quali risorse può utilizzare per un dato progetto. In base alle competenze richieste piò quindi consultare quali risorse può richiedere per svolgere il progetto con maggior efficienza ed efficacia.\\ 
+Si prefissa quindi come obiettivo la creazione di un portale aziendale unificato per una migliore gestione del personale ed il suo dislocamento all’interno dei progetti aziendali, oltre che alla gestione dei curricula vitae del personale aziendale.\\
+Per quanto riguarda l'organizzazione del progetto, è stato deciso che \myTitle{} avrebbe avuto due layer \emph{Frontend} e \emph{Backend} comunicanti tramite richieste \emph{REST}. Questo per rendere le due componenti più separate possibile, dovendo soltanto definire le \emph{API} di comunicazione tra il client ed il server. Inoltre, essendo che questo progetto di stage ha coperto la parte Frontend, in un progetto futuro di implementazione del \emph{Backend}, il server dovrà solamente esporre le corrette funzionalità alla chiamata delle \emph{API REST} concordate.
+
+
 
 
 %**************************************************************
+
+
 \section{Organizzazione del testo}
 
 \begin{description}
