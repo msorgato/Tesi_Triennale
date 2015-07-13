@@ -103,7 +103,7 @@ Come altri framework utilizzati con lo stesso fine, una delle feature più utili
 Angular inoltre fornisce degli strumenti per astrarre e realizzare la comunicazione con un backend. Tramite Angular, infatti, è possibile creare una web app totalmente RESTful, tramite l’utilizzo delle \$resource e dei servizi \$http messi a disposizione dal framework.
 
 \subsubsection{Bootstrap}
-\begin{figure}[H] 
+\begin{figure}[htb] 
     \centering 
     \includegraphics[width=0.4\columnwidth]{bootstrap_logo} 
     \caption{Logo di Bootstrap}
@@ -115,9 +115,78 @@ Includendo Bootstrap nella propria pagina web (sia da \gls{cdn} che da codice so
 Bootstrap includ una libreria \gls{css} di base con una grande varietà di classi da applicare agli elementi di HTML statico, più un file JavaScript con le funzioni jQuery basilari di comportamento, entrambi facilmente estendibili dallo sviluppatore con file personalizzati.
 
 \subsection{Strumenti a supporto dei processi}
+\subsubsection{Grunt}
+\begin{figure}[htb] 
+    \centering 
+    \includegraphics[width=0.3\columnwidth]{grunt_logo} 
+    \caption{Logo di Grunt}
+\end{figure}
+Grunt è un gestore ed un esecutore di attività JavaScript. Utilizzato soprattutto per l’automazione di attività come minificazione, compilazione, test di unità, di scenario, ecc., aiuta lo sviluppatore soprattutto nella creazione di applicazioni \emph{client side}, aumentando l’efficienza nello sviluppo. 
+A seconda delle esigenze e delle possibilità hardware, infatti, Grunt può essere configurato in modo che vengano eseguiti certi script ad ogni modifica di un file, o solo di alcuni. Si può quindi ricaricare un webserver alla modifica di un file html o eseguire un certo test di unità alla modifica di un file JavaScript, tutto assolutamente automatizzato.\\
+Inoltre Grunt e la sua community sono in continuo sviluppo; ci sono molti sviluppatori che scrivono attorno a questa tecnologia, creando plugin da utilizzare per automatizzare anche il sistema di configurazione di Grunt, per adattarsi ai vari framework utilizzati durante lo sviluppo.
+
+\subsubsection{Karma}
+\begin{figure}[htb] 
+    \centering 
+    \includegraphics[width=0.4\columnwidth]{karma_logo} 
+    \caption{Logo di Karma}
+\end{figure}
+Karma, precedentemente conosciuto come \emph{Testacular}, è un ambiente creato per il lancio e la gestione dei test in ambiente JavaScript.\\
+Karma supporta diversi framework di testing, inoltre è compatibile con i maggiori browser per assicurare che l’ambiente utilizzato per il testing sia funzionante in tutti i casi. 
+L’unico compito che ha lo sviluppatore, per poter utilizzare Karma, è (oltre all’installazione del client e dei plugin necessari) creare e personalizzare il file di configurazione di Karma, la cui struttura viene creata in automatico con un comando del client da terminale. 
+All’interno del file di configurazione, lo sviluppatore può configurare tutti gli aspetti dell’esecuzione dei test, dai browser utilizzati alla selezione di quali test eseguire, in una esecuzione singola o ad aggiornamento dei file. 
+Oltre ad eseguire i test che vengono specificati nei path del file di configurazione, Karma offre anche altre funzionalità interessanti che si appoggiano sui test scritti. Una di queste funzionalità è la generazione automatica di un file di HTML statico in cui vengono mostrate le singole metriche di coverage di ogni file e in media per il progetto. Le metriche di copertura generate automaticamente con il plugin \emph{coverage} di Karma sono:
+\begin{itemize}
+	\item line coverage;
+	\item statement coverage;
+	\item branch coverage;
+	\item function coverage.
+\end{itemize}
+Nella “vista” che viene creata dal plugin, è possibile visualizzare quali linee non sono eventualmente coperte dai test, quali branch e quali funzioni, su cui quindi andare ad intervenire o meno per aumentare la copertura, o per verificare che ogni funzionalità sia effettivamente implementata e testata.
+
+\subsubsection{NPM}
+\begin{figure}[htb] 
+    \centering 
+    \includegraphics[width=0.4\columnwidth]{npm_logo} 
+    \caption{Logo di NPM}
+\end{figure}
+Acronimo di \emph{Node Package Manager}. Come da definizione, npm è un gestore di pacchetti e moduli JavaScript, basato su Node.js.\\ 
+Tramite npm è possibile cercare ed installare localmente ad un progetto o globalmente una grande serie di utilità pubblicate nel registro stesso di npm. Oltre a questo, è possibile gestire ed aggiornare facilmente ogni pacchetto installato tramite semplici comandi da terminale.
+La gestione dei pacchetti di npm consente di suddividere i moduli in funzionalità, per garantire così il riutilizzo atomico e una maggiore manutenibilità dei singoli file, così come la condivisione con altri sviluppatori attraverso il registro npm. 
+
+\subsubsection{Protractor}
+\begin{figure}[htb] 
+    \centering 
+    \includegraphics[width=0.4\columnwidth]{protractor_logo} 
+    \caption{Logo di Protractor}
+\end{figure}
+Protractor è un framework utilizzato per realizzare test \emph{end-to-end}, pensato soprattutto per la compatibilità con Angular.js. Protractor è un programma scritto in Node.js, mentre la sua base e l’interazione con i vari browser è mediata da WebDriverJS.\\
+Questo framework permette di eseguire i comandi pensati e scritti nei test end-to-end. Ovvero, permette di simulare il comportamento di un utente con una certa Web Application, verificando che gli output attesi di una certa applicazione ad un certo comportamento utente, siano quelli previsti. Tramite l’utilizzo di Selenium WebDriverJS, questo procedimento di testing viene completamente automatizzato; si riescono a replicare le tipiche azioni di un utente e Protractor analizza ogni risposta dell’applicazione e la confronta con le attese.\\
+Alla fine di ogni test suite, ci vengono presentati i risultati dell’esecuzione dei test e, se ci sono, quali statement hanno provocato un errore.
 
 \subsection{Ambiente di sviluppo}
+\subsubsection{PhPStorm}
+\begin{figure}[htb] 
+    \centering 
+    \includegraphics[width=0.4\columnwidth]{phpstorm_logo} 
+    \caption{Logo di PhPStorm}
+\end{figure}
+PhpStorm è un \gls{ide} commerciale sviluppato e distribuito da JetBrains e si basa su IntelliJ IDEA.
+PhpStorm fornisce un editor per PHP, HTML e JavaScript, aiutando lo sviluppatore con correzioni e segnalazioni in real time e molte feature di refactoring del codice.\\
+PhpStorm è basato su IntelliJ IDEA, che è scritto in Java. Oltre alle funzioni core dell’IDE, l’utente può estendere le funzionalità installando i numerosi plugin disponibili o scrivendone alcuni propri.\\
+Oltre ad offrire un editor responsivo ed efficiente, PhpStorm si presta molto bene per lo sviluppo di applicazioni in JavaScript, supportando i maggiori framework del linguaggio, come soprattutto AngularJS e NodeJS. 
+Inoltre è possibile configurare l’\gls{ide} per l’esecuzione automatica di test scritti con Jasmine, mostrando direttamente i risultati di tali esecuzioni all’interno dell’\gls{ide} stesso, senza bisogno di un cambio di contesto e strumenti, oltre alla classica funzionalità di debugging.
 
 \subsection{Tecnologie di Testing}
 \subsubsection{Jasmine}
-\subsubsection{BlaBla}
+\begin{figure}[htb] 
+    \centering 
+    \includegraphics[width=0.4\columnwidth]{jasmine_logo} 
+    \caption{Logo di PhPStorm}
+\end{figure}
+Jasmine è un framework di testing open source per il linguaggio JavaScript. Jasmine, all’interno di un progetto in AngularJS o più in generale, può essere utilizzato sia per i test di unità dei componenti, sia per i test e2e.\\
+Jasmine si basa sulla sua facilità di comprensione dei test. Infatti, ogni test di Jasmine è diviso in blocchi di più suite. Ogni blocco riguarda una particolare componente del codice, ed ogni funzionalità testata viene correlata da una specifica descrizione del comportamento atteso.\\
+Idealmente ogni statement di controllo di Jasmine dovrebbe testare non più di una funzione del codice, così da rendere i controlli maggiormente atomici. Per aiutare lo sviluppatore nella scrittura dei test, Jasmine presenta al suo interno una grande quantità di costrutti di confronto, che spaziano sui diversi tipi di dato che si possono incontrare, lasciando comunque allo sviluppatore il modo di creare confronti personalizzati.\\
+Usato insieme ad AngularJS, Jasmine arricchisce ulteriormente le sue potenzialità, in quanto Angular comprende un modulo apposito scritto per il testing, ovvero \emph{angular-mocks}. In questo modulo, da includere in Jasmine, troviamo i costruttori di ogni componente di Angular, con cui iniettare le varie componenti mockate quando ne abbiamo l’esigenza, come ad esempio nel test di un controller che dipende da uno o più servizi, più altre componenti utili allo sviluppatore.\\
+Per quanto riguarda i test e2e, Jasmine contiene al suo interno vari strumenti di simulazione di input utente, quali ad esempio il click su un elemento o l’inserimento di testo in una casella. Attraverso l’uso di questi strumenti, è possibile simulare vari scenari di interazione con le varie funzionalità del sistema, andando quindi a testare il corretto funzionamento delle varie unità. 
+Questo si ottiene sfruttando di browser driver come \emph{Selenium}, i quali automatizzano l’interazione con i vari browser.
