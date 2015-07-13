@@ -21,9 +21,15 @@ Durante la fase di analisi iniziale sono stati individuati alcuni possibili risc
 Si è quindi proceduto a elaborare delle possibili soluzioni per far fronte a tali rischi.\\
 
 \begin{risk}{Conflitti nell'implementazione parallela di User Stories}
-		\riskdescription{durante lo svolgimento di un progetto, ogni implementazione di una User Story deve trovarsi su un branch separato, derivato dal branch \emph{develop}. Può quindi accadere che, in determinati casi, l'esecuzione di ogni ticket e il suo assorbimento nel sistema non siano sequenziali, in quanto il Responsabile di progetto può non essere sempre presente. Quindi, nel caso in cui si realizzino più feature senza avere una pull request alla fine di ognuna, il codice che poi dovrà essere inserito nel sistema darà quasi certamente conflitto nella fase di \emph{merge}}
-		\risksolution{sollecitare il Responsabile di progetto all'analisi dei cambiamenti apportati ad ogni feature, notificandolo periodicamente sullo stato di esecuzione del ticket, in modo che il Responsabile sia pronto all'esaminazione della User Story implementata in modo più repentino}
-		\label{risk:merge-conflict}
+	\riskdescription{durante lo svolgimento di un progetto, ogni implementazione di una User Story deve trovarsi su un branch separato, derivato dal branch \emph{develop}. Può quindi accadere che, in determinati casi, l'esecuzione di ogni ticket e il suo assorbimento nel sistema non siano sequenziali, in quanto il Responsabile di progetto può non essere sempre presente. Quindi, nel caso in cui si realizzino più feature senza avere una pull request alla fine di ognuna, il codice che poi dovrà essere inserito nel sistema darà quasi certamente conflitto nella fase di \emph{merge}}
+	\risksolution{sollecitare il Responsabile di progetto all'analisi dei cambiamenti apportati ad ogni feature, notificandolo periodicamente sullo stato di esecuzione del ticket, in modo che il Responsabile sia pronto all'esaminazione della User Story implementata in modo più repentino}
+	\label{risk:merge-conflict}
+\end{risk}
+
+\begin{risk}{Reperibilità del Responsabile di Progetto}
+	\riskdescription{data la varietà di progetti che il Responsabile di Progetto a me assegnato deve seguire, può presentarsi la possibilità che questi non sia sempre reperibile in sede per un confronto diretto. Il rischio si applica anche a quelle giornate in cui il Responsabile è impegnato ad altri progetti aziendali per l'intera durata della giornata lavorativa.}
+	\risksolution{la gestione delle attività tramite Kanban serve proprio a mitigare questo tipo di rischi, in quanto uno sviluppatore può implementare più User Stories senza dover consultare direttamente il Responsabile. Questo ovviamente se il Responsabile ha stilato un numero adeguato di User Stories da implementare. Inoltre, l'utilizzo degli strumenti JIRA e STASH consente a due o più collaboratori di discutere il codice prodotto direttamente dall'interfaccia web, quindi anche in maniera telematica, ignorando il confronto diretto in sede.}
+	\label{risk:pm-availability}
 \end{risk}
 
 \begin{risk}{Performance del simulatore hardware}
