@@ -70,7 +70,7 @@ A questo punto si può verificare un imprevisto, ovvero che nel tempo in cui vie
 
 \subsection{Test Driven Developement}
 Il modello di sviluppo Test Driven (guidato dai test) prevede che lo sviluppo di ogni unità software avvenga soltanto dopo aver scritto il corrispondente test sulla base delle specifiche dell’unità stessa.\\
-Il dovere di ogni programmatore che segue questo modello è quello di scrivere il minimo quantitativo di codice necessario a far validare il test, minimizzando gli sprechi e provando la correttezza del prodotto, delegando il refactoring stilistico ad un momento successivo, in cui si ha già un codice testato e funzionante.\\
+Il dovere di ogni programmatore che segue questo modello è quello di scrivere il minimo quantitativo di codice necessario a far validare un test precedentemente scritto, minimizzando gli sprechi e provando la correttezza del prodotto, delegando il refactoring stilistico ad un momento successivo, in cui si ha già un codice testato e funzionante.\\
 Il motto dello sviluppo Test Driven è appunto “Red, Green, Refactor”; la procedura da seguire prevista da questa metodologia è la seguente:
 \begin{enumerate}
 	\item scrivere un “singolo” test di unità che descrive una funzionalità del programma;
@@ -84,8 +84,11 @@ La stesura di un test aiuta molto nella comprensione delle funzionalità di un m
 Il framework AngularJS è stato creato appositamente per rendere il testing più efficiente e semplice possibile, grazie a molte funzionalità focalizzate al testing già comprese all’interno del framework. Questa scelta è stata compiuta perché JavaScript ha una grandissima potenza espressiva, ma quasi nessun controllo da parte del compilatore, il che rende necessaria la costante presenza dei test nello sviluppo con questo linguaggio.
 
 \subsubsection{Test di Unità}
+La tipologia di test utilizzata maggiormente con questo approccio è l'insieme dei test di unità. Questa tipologia di test si prefissa di verificare il corretto funzionamento di una singola unità software. Per unità si intende normalmente il minimo componente di un programma dotato di funzionamento autonomo; a seconda del paradigma di programmazione o linguaggio di programmazione, questo può corrispondere per esempio a una singola funzione nella programmazione procedurale, o una singola classe o un singolo metodo nella programmazione a oggetti.\\
+Applicando questo concetto al progetto in analisi, i test di unità scritti verificano la correttezza di ogni funzione scritta nei vari componenti del pattern \gls{mvc} di Angular. 
 
-\subsubsection{Test e2e}
+\subsubsection{Test di scenario}
+I test di scenario, conosciuti anche come “end-to-end” (E2E), sono una metodologia di test utilizzata per verificare il corretto flusso di un’applicazione, se questa si comporta come pianificato dall’inizio alla fine del flusso. L’obiettivo che sta alla base della creazione di test di scenario è di identificare  le dipendenze di sistema e di assicurarsi che le informazioni (e il loro formato) siano passate correttamente tra le varie componenti del sistema.
 
 % ----------------------------------------------------------------------------------------------------
 
