@@ -56,9 +56,24 @@ L'applicazione sarà composta da un \gls{frontend} realizzato in \emph{AngularJS
 L'utente finale sviluppatore può vedere \myTitle{} come una sorta di curriculum digitale ampliato, in cui poter inserire le proprie competenze riconosciute, le esperienze acquisite ed i progetti a cui ha preso parte. Nella propria \emph{dashboard}, l'utente finale può gestire le proprie informazioni e richiedere l'inserimento di nuove entità, come nuovi progetti a cui ha preso parte, nuove skill acquisite, certificazioni esterne o interne o altri titoli formativi e le sue esperienze lavorative pregresse.\\ 
 Chi ha compiti di gestione (ad esempio la figura del Responsabile di progetto), utilizza lo strumento per vedere quali risorse può utilizzare per un dato progetto. In base alle competenze richieste può quindi consultare quali risorse può richiedere per svolgere il progetto con maggior efficienza ed efficacia.\\ 
 Si prefissa quindi come obiettivo la creazione di un portale aziendale unificato per una migliore gestione del personale ed il suo dislocamento all’interno dei progetti aziendali, oltre che alla gestione dei curricula vitae del personale aziendale.\\
-Per quanto riguarda l'organizzazione del progetto, è stato deciso che \myTitle{} avrebbe avuto due layer \emph{Frontend} e \emph{Backend} comunicanti tramite richieste \emph{REST}. Questo per rendere le due componenti più separate possibile, dovendo soltanto definire le \emph{API} di comunicazione tra il client ed il server. Inoltre, essendo che questo progetto di stage ha coperto la parte Frontend, in un progetto futuro di implementazione del \emph{Backend}, il server dovrà solamente esporre le corrette funzionalità alla chiamata delle \emph{API REST} concordate.
+Per quanto riguarda l'organizzazione del progetto, è stato deciso che \myTitle{} avrebbe avuto due layer \emph{Frontend} e \emph{Backend} comunicanti tramite richieste \gls{rest}. Questo per rendere le due componenti più separate possibile, dovendo soltanto definire le \gls{api} di comunicazione tra il client ed il server. Inoltre, essendo che questo progetto di stage ha coperto la parte \emph{Frontend}, in un progetto futuro di implementazione del \emph{Backend}, il server dovrà solamente esporre le corrette funzionalità alla chiamata delle \gls{api} \gls{rest} concordate.
 
 
+
+
+%**************************************************************
+
+\section{Vincoli}
+\subsection{Tecnologici}
+I vincoli sullo stack tecnologico da utilizzare nell'implementazione di \myTitle{} sono stati fissati sin dai primi contatti. Per questo, la prima settimana di stage è stata rivolta all'apprendimento di tali strumenti e all'integrazione con gli strumenti e le procedure aziendali.\\
+Tali strumenti sono:
+\begin{itemize}
+	\item \emph{AngularJS}, framework JavaScript per la scrittura di applicazioni web frontend;
+	\item \emph{Bootstrap}, libreria \gls{css} grafica per gestire la presentazione di pagine web \gls{html};
+	\item \emph{JasmineJS}, framework JavaScript utilizzato per la scrittura di test, soprattutto di unità ed \gls{e2e}. 
+\end{itemize}
+La scelta di queste tecnologie ovviamente non è casuale. Nello sviluppo di applicazioni web con \emph{AngularJS}, lo stack tecnologico utilizzato più diffusamente è proprio questo. L'utilizzo di \emph{Jasmine} è quasi obbligatorio, data la sua immediatezza di configurazione con \emph{AngularJS} e la filosofia stessa del framework frontend, che è stato pensato appunto per rendere il testing più semplice.\\
+\emph{Bootstrap}, d'altro canto, è estremamente facile da integrare con qualsiasi strumento che si basi su \gls{html} per fornire le sue viste.
 
 
 %**************************************************************
