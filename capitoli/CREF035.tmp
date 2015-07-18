@@ -121,54 +121,19 @@ Bootstrap includ una libreria \gls{css} di base con una grande varietà di class
 \subsubsection{Git}
 \begin{figure}[htb] 
     \centering 
-    \includegraphics[width=0.32\columnwidth]{git_logo} 
+    \includegraphics[width=0.4\columnwidth]{git_logo} 
     \caption{Logo di Git}
 \end{figure}
-\emph{Git} è un sistema software di controllo di versione distribuito. Le funzionalità principali di \emph{Git} sono le seguenti:
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Da modificare, ma adesso non ho tempo. U_U
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{itemize}
-	\item \textbf{decentralizzazione:} dato che la copia locale del progetto è una repository, in
-qualunque momento è possibile committare e beneficiare di ogni vantaggio che
-offre un sistema di versionamento;
-	\item \textbf{grande community:} considerata l’estesa community di sviluppatori che usa
-Git è possibile trovare diversi tool e plugin che spesso semplificano il lavoro,
-risparmiando così tempo;
-	\item \textbf{diversi workflow:} grazie alla propria natura distribuita Git permette di
-implementare facilmente praticamente ogni workflow desiderato.
-
-\end{itemize}
+\emph{Git} è un sistema software di controllo di versione distribuito. 
 
 \subsubsection{JIRA}
 \begin{figure}[htb] 
     \centering 
     \includegraphics[width=0.4\columnwidth]{JIRA_logo} 
-    \caption{Logo di JIRA}
+    \caption{Logo di Git}
 \end{figure}
-Jira è un prodotto proprietario finalizzato al tracciamento dei compiti, sviluppato da Atlassian dal 2002\footcite{atlassian:jira}. Esso fornisce il tracciamento di bug, compiti e funzionalità di project management. JIRA non è un acronimo, bensì il troncamento della parola giapponese \emph{Gojira}.\\
-JIRA è scritto in Java e si basa sul sistema di inversione di controllo sviluppato da Pico, su Apache OFBiz e lo stack tecnologico di WebWork 1. JIRA supporta diverse chiamate procedurali remote, quali \gls{rest}, \gls{soap} e altre. JIRA si integra con i programmi di versionamento Clearcase, CVS, Git, Mercurial, Perforce, Subversion e Team Foundation Server.\\
-Secondo i dati di Atlassian, JIRA viene usato nel tracciamento delle attività e nel project management da oltre 25,000 utenti in 122 paesi nel mondo. Alcune delle organizzazioni che usano JIRA sono Fedora Commons, Hibernate, Honeywell Aerospace, JBoss, Linden Lab, Skype, Spring Framework e The Apache Software Fundation.  
+Jira è un prodotto proprietario finalizzato al tracciamento dei compiti, sviluppato da Atlassian dal 2002\footcite{atlassian:jira}.
 
-\subsubsection{Stash}
-\begin{figure}[htb] 
-    \centering 
-    \includegraphics[width=0.4\columnwidth]{stash_logo} 
-    \caption{Logo di Stash}
-\end{figure}
-Stash è un software aziendale di controllo di versionamento distribuito basato su Git. 
-Esso offre un sistema di gestione dei repository a progetto, il che predispone un naturale accompagnamento con il sistema di project management JIRA.
-
-\paragraph{Branching}
-L’implementazione di una nuova funzionalità, secondo le strategie aziendali, viene effettuata su un nuovo branch. Questa scelta permette lo sviluppo indipendente di più feature, partendo da un punto comune (solitamente il branch “develop” del repository) e diversificando in base ai task assegnati agli sviluppatori del team.
-
-\paragraph{Pull request}
-Ogniqualvolta una nuova funzionalità viene implementata, con il corrispondente completamento del ticket dell’attività di JIRA, viene creata una “pull request” per integrare il nuovo contenuto. Questa pull request viene effettuata in un branch più generale, solitamente nel branch “develop” se il prodotto è ancora in via di sviluppo, oppure direttamente nel “master” se si sta per rilasciare una nuova release del prodotto.\\
-Ogni pull request non viene integrata finché non viene approvata dal responsabile, il quale visiona i cambiamenti introdotti nella nuova funzionalità; egli può in ogni caso segnalare eventuali cambiamenti indesiderati allo sviluppatore e richiedere una modifica del codice.
 
 \subsection{Ambiente di sviluppo}
 \subsubsection{PhPStorm}

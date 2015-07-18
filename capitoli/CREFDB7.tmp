@@ -124,25 +124,7 @@ Bootstrap includ una libreria \gls{css} di base con una grande varietà di class
     \includegraphics[width=0.32\columnwidth]{git_logo} 
     \caption{Logo di Git}
 \end{figure}
-\emph{Git} è un sistema software di controllo di versione distribuito. Le funzionalità principali di \emph{Git} sono le seguenti:
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Da modificare, ma adesso non ho tempo. U_U
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{itemize}
-	\item \textbf{decentralizzazione:} dato che la copia locale del progetto è una repository, in
-qualunque momento è possibile committare e beneficiare di ogni vantaggio che
-offre un sistema di versionamento;
-	\item \textbf{grande community:} considerata l’estesa community di sviluppatori che usa
-Git è possibile trovare diversi tool e plugin che spesso semplificano il lavoro,
-risparmiando così tempo;
-	\item \textbf{diversi workflow:} grazie alla propria natura distribuita Git permette di
-implementare facilmente praticamente ogni workflow desiderato.
-
-\end{itemize}
+\emph{Git} è un sistema software di controllo di versione distribuito. 
 
 \subsubsection{JIRA}
 \begin{figure}[htb] 
