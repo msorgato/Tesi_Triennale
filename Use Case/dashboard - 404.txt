@@ -1,0 +1,7 @@
+attori: Utente autenticato
+
+pre: l'utente deve aver effettuato il login presso SkillMatrix ed avere una sessione attiva
+
+desc: se l'utente, all'interno del dominio, effettua la ricerca di una risorsa non presente, il sistema informa l'utente di questa mancanza e fornisce istruzioni per la segnalazione
+
+post: l'utente visualizza la pagina di segnalazione di risorsa non presente e decide se segnalare la mancanza o tornare alla DASHBOARD

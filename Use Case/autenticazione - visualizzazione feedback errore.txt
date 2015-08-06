@@ -1,0 +1,10 @@
+Attori: utente non autenticato
+
+pre: l'utente non ha effettuato il login a SkillMatrix
+
+desc: l'utente visualizza un messaggio d'errore nel caso in cui avvenga una delle seguenti situazioni: 
+ - le credenziali sono errate
+ - la comunicazione con il server è fallita
+ - ?
+
+post: viene visualizzato un messaggio d'errore e il contatore che esprime la quantità di volte che l'errore si è manifestato

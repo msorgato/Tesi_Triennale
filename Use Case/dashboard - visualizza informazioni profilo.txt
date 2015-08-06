@@ -1,0 +1,7 @@
+attori: utente autenticato
+
+pre: l'utente deve aver eseguito con successo il login al sistema
+
+desc: l'utente seleziona il menù di visualizzazione delle informazioni del proprio profilo
+
+post: l'utente viene reindirizzato alla pagina di presentazione delle proprie informazioni

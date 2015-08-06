@@ -1,0 +1,7 @@
+Attore principale: Utente non autenticato
+
+Precondizioni: l'utente non ha effettuato il login in SkillMatrix e deve possedere credenziali valide
+
+Descrizione: l'utente fornisce dei dati validi di accesso nella pagina di Login e viene reindirizzato alla pagina di gestione del profilo
+
+Postcondizioni: le credenziali di accesso sono state verificate e l'utente è stato reindirizzato alla DASHBOARD
