@@ -30,6 +30,20 @@ Essendo il progetto finalizzato alla creazione di un tool per l'automazione di u
 \label{uc:scenario-principale}
 \end{usecase}
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\columnwidth]{usecase/Autenticazione} 
+    \caption{Use Case - UC1: Autenticazione}
+\end{figure}
+
+\begin{usecase}{1}{Autenticazione}
+\usecaseactors{Utente non autenticato}
+\usecasepre{l'utente non ha effettuato il login in SkillMatrix e deve possedere credenziali valide}
+\usecasedesc{l'utente fornisce dei dati validi di accesso nella pagina di Login e viene reindirizzato alla pagina di gestione del profilo}
+\usecasepost{le credenziali di accesso sono state verificate e l'utente è stato reindirizzato alla DASHBOARD}
+\label{uc:autenticazione}
+\end{usecase}
+
 \section{Tracciamento dei requisiti}
 
 Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
