@@ -33,7 +33,7 @@ Essendo il progetto finalizzato alla creazione di un tool per l'automazione di u
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.9\columnwidth]{usecase/Autenticazione} 
-    \caption{Use Case - UC1: Autenticazione}
+    \caption{Use Case - Login}
 \end{figure}
 
 \begin{usecase}{1}{Autenticazione}
@@ -42,6 +42,40 @@ Essendo il progetto finalizzato alla creazione di un tool per l'automazione di u
 \usecasedesc{l'utente fornisce dei dati validi di accesso nella pagina di Login e viene reindirizzato alla pagina di gestione del profilo}
 \usecasepost{le credenziali di accesso sono state verificate e l'utente è stato reindirizzato alla DASHBOARD}
 \label{uc:autenticazione}
+\end{usecase}
+
+\begin{usecase}{2}{Visualizzazione feedback errore}
+\usecaseactors{Utente non autenticato}
+\usecasepre{l'utente non ha effettuato il login a SkillMatrix}
+\usecasedesc{l'utente visualizza un messaggio d'errore nel caso in cui avvenga una delle seguenti situazioni:
+\begin{itemize}
+	\item le credenziali sono errate;
+	\item la comunicazione con il server è fallita.
+\end{itemize}}
+\usecasepost{viene visualizzato un messaggio d'errore e il contatore che esprime la quantità di volte che l'errore si è manifestato}
+\label{uc:errore_login}
+\end{usecase}
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\columnwidth]{usecase/Dashboard} 
+    \caption{Use Case - Dashboard}
+\end{figure}
+
+\begin{usecase}{3}{Visualizza informazioni profilo}
+\usecaseactors{Utente autenticato}
+\usecasepre{l'utente deve aver eseguito con successo il login al sistema}
+\usecasedesc{l'utente seleziona il menù di visualizzazione delle informazioni del proprio profilo}
+\usecasepost{l'utente viene reindirizzato alla pagina di presentazione delle proprie informazioni}
+\label{uc:profilo}
+\end{usecase}
+
+\begin{usecase}{4}{Visualizza esperienze registrate}
+\usecaseactors{Utente autenticato}
+\usecasepre{l'utente deve aver eseguito con successo il login al sistema}
+\usecasedesc{l'utente seleziona il menù di visualizzazione delle esperienze registrate nel sistema}
+\usecasepost{l'utente viene reindirizzato alla pagina di presentazione delle proprie esperienze professionali registrate}
+\label{uc:esperienze}
 \end{usecase}
 
 \section{Tracciamento dei requisiti}
