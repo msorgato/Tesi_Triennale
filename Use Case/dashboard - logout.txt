@@ -1,0 +1,7 @@
+attori: utente autenticato
+
+pre: l'utente deve aver eseguito con successo il login al sistema
+
+desc: l'utente seleziona il pulsante di logout presente nella dashboard
+
+post: l'utente viene reindirizzato alla pagina di login e la sua sessiona viene cancellata

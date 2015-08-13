@@ -52,7 +52,7 @@ Essendo il progetto finalizzato alla creazione di un tool per l'automazione di u
 	\item le credenziali sono errate;
 	\item la comunicazione con il server è fallita.
 \end{itemize}}
-\usecasepost{viene visualizzato un messaggio d'errore e il contatore che esprime la quantità di volte che l'errore si è manifestato}
+\usecasepost{viene visualizzato un messaggio d'errore e il contatore che esprime la quantità di volte che l'errore si è manifestato, per poi far ritornare l'utente alla schermata di login}
 \label{uc:errore_login}
 \end{usecase}
 
@@ -110,6 +110,14 @@ Essendo il progetto finalizzato alla creazione di un tool per l'automazione di u
 \label{uc:lista_progetti}
 \end{usecase}
 
+\begin{usecase}{9}{Logout}
+\usecaseactors{Utente autenticato}
+\usecasepre{l'utente deve aver effettuato il login presso SkillMatrix ed avere una sessione attiva}
+\usecasedesc{l'utente seleziona il pulsante di logout presente nella dashboard}
+\usecasepost{l'utente viene reindirizzato alla pagina di login e la sua sessiona viene cancellata}
+\label{uc:logout}
+\end{usecase}
+
 \section{Tracciamento dei requisiti}
 
 Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
@@ -135,55 +143,64 @@ Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e 
 \hline\hline
 \textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 \hline
-RFN-1     & (FARLOCCO)L'interfaccia permette di configurare il tipo di sonde del test & UC1 \\
+RFN-1 & L'applicazione deve reagire ad un'errata autenticazione tramite reindirizzamento all'interfaccia di login & UC2 \\
 \hline
-RFN-1 & L'applicazione deve reagire ad un'errata autenticazione tramite reindirizzamento all'interfaccia di login & UCN \\
+RFN-2 & L'applicazione deve reagire alla scadenza di una sessione tramite reindirizzamento all'interfaccia di login & UC2 \\
 \hline
-RFN-2 & L'applicazione deve reagire alla scadenza di una sessione tramite reindirizzamento all'interfaccia di login & UCN \\
+RFN-3 & L'applicazione non deve permettere l'accesso anonimo al sistema, tranne che per l'interfaccia di login & UC1 \\
 \hline
-RFN-3 & L'applicazione non deve permettere l'accesso anonimo al sistema, tranne che per l'interfaccia di login & UCN \\
+RFN-4 & All'avvio, l'applicazione deve controllare se esiste una sessione attiva & - \\
 \hline
-RFN-4 & All'avvio, l'applicazione deve controllare se esiste una sessione attiva & UCN \\
+RFN-5 & In caso di sessione attiva, l'utente deve essere reindirizzato alla Dashboard se la sessione è valida & - \\
 \hline
-RFN-5 & In caso di sessione attiva, l'utente deve essere reindirizzato alla Dashboard se la sessione è valida & UCN \\
+RFN-6 & In caso di sessione non attiva o non valida, l'utente deve essere riportato alla schermata di login & UC2 \\
 \hline
-RFN-6 & In caso di sessione non attiva o non valida, l'utente deve essere riportato alla schermata di login & UCN \\
+RFN-7 & L'applicazione deve poter consentire ad un utente registrato di effettuare l'autenticazione & UC1 \\
 \hline
-RFN-7 & L'applicazione deve poter consentire ad un utente registrato di effettuare l'autenticazione & UCN \\
+RFN-8 & L'utente autenticato deve poter visionare i propri dati dopo il login nel sistema & UC3 \\
 \hline
-RFN-8 & L'utente autenticato deve poter visionare i propri dati dopo il login nel sistema & UCN \\
+RFN-9 & L'utente autenticato deve poter effettuare il logout dal sistema & UC9 \\
 \hline
-RFN-9 & L'utente autenticato deve poter effettuare il logout dal sistema & UCN \\
-\hline
-RFN-10 & L'utente deve poter visualizzare i propri titoli di studio e/o abilitazioni professionali una volta effettuato il login & UCN \\
+RFN-10 & L'utente deve poter visualizzare i propri titoli di studio e/o abilitazioni professionali una volta effettuato il login & UC6 \\
 \hline
 RFN-11 & L'utente deve poter inserire un nuovo titolo di studio o un'abilitazione professionale nel sistema & UCN \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-RFN-12 & L'utente deve poter visualizzare le proprie skill una volta effettuato il login & UCN \\
+RFN-12 & L'utente deve poter visualizzare le proprie skill una volta effettuato il login & UC5 \\
 \hline
 RFN-12.1 & L'utente deve poter filtrare le skill visualizzate per livello di competenza & UCN \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-RFN-13 & L'utente deve poter visualizzare i progetti ad esso associati una volta effettuato il login & UCN \\
+RFN-13 & L'utente deve poter visualizzare i progetti ad esso associati una volta effettuato il login & UC7 \\
 \hline
 RFN-13.1 & L'utente deve poter visualizzare quale progetto necessita di registrazione nel sistema & UCN \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 RFN-14 & L'utente deve poter visualizzare le informazioni dettagliate di un singolo progetto & UCN \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-RFN-15 & L'utente deve poter visualizzare le proprie esperienze professionali una volta effettuato il login al sistema & UCN \\
+RFN-15 & L'utente deve poter visualizzare le proprie esperienze professionali una volta effettuato il login al sistema & UC4 \\
 \hline
 RFN-16 & L'utente deve poter inserire una nuova esperienza professionale nel sistema & UCN \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 RFD-1 & Il sistema deve implementare una struttura gerarchica & UCN \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 RFD-1.1 & L'interfaccia mostrata in base al tipo di ogni utente deve essere adattata al tipo dello stesso & UCN \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 RFD-1.1.1 & L'amministratore di un progetto deve poter vedere le persone assegnate a quel progetto & UCN \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 RFD-2 & L'utente deve ricevere un feedback nell'interfaccia ogni volta che avvenga un errore di comunicazione col server & UCN \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 RFO-1 & Per tutti i dati presentati tramite lista va implementato l'infinite scroll & UCN \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 RFO-2 & L'utente deve poter visualizzare la quantità di progetti che richiedono registrazione tramite notifica nella dashboard & UCN \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 \end{tabularx}
 \end{table}%
@@ -201,7 +218,7 @@ RQD-2 & Deve venire prodotta la documentazione tecnica di dettaglio & - \\
 \hline
 RQD-3 & La grafica dell'interfaccia deve essere conforme agli standard aziendali & - \\
 \hline
-RQD-4 & L'utente deve visualizzare una pagina di supporto se naviga verso una pagina non presente & - \\
+RQD-4 & L'utente deve visualizzare una pagina di supporto se naviga verso una pagina non presente & UC8 \\
 \hline
 \end{tabularx}
 \end{table}%
