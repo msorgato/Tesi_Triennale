@@ -78,6 +78,38 @@ Essendo il progetto finalizzato alla creazione di un tool per l'automazione di u
 \label{uc:esperienze}
 \end{usecase}
 
+\begin{usecase}{5}{Visualizza skill registrate}
+\usecaseactors{Utente autenticato}
+\usecasepre{l'utente deve aver eseguito con successo il login al sistema}
+\usecasedesc{l'utente seleziona il menù di visualizzazione delle skill registrate nel sistema}
+\usecasepost{l'utente viene reindirizzato alla pagina di presentazione delle proprie skill registrate}
+\label{uc:skill}
+\end{usecase}
+
+\begin{usecase}{6}{Visualizza qualificazioni registrate}
+\usecaseactors{Utente autenticato}
+\usecasepre{l'utente deve aver eseguito con successo il login al sistema}
+\usecasedesc{l'utente seleziona il menù di visualizzazione delle qualificazioni registrate nel sistema}
+\usecasepost{l'utente viene reindirizzato alla pagina di presentazione delle proprie qualificazioni registrate}
+\label{uc:qualificazioni}
+\end{usecase}
+
+\begin{usecase}{7}{Visualizza lista dei progetti aziendali}
+\usecaseactors{Utente autenticato}
+\usecasepre{l'utente deve aver eseguito con successo il login al sistema}
+\usecasedesc{l'utente seleziona il menù di visualizzazione dei progetti aziendali}
+\usecasepost{l'utente viene reindirizzato alla pagina di visualizzazione della lista di progetti aziendali}
+\label{uc:lista_progetti}
+\end{usecase}
+
+\begin{usecase}{8}{Visualizza pagina 404}
+\usecaseactors{Utente autenticato}
+\usecasepre{l'utente deve aver effettuato il login presso SkillMatrix ed avere una sessione attiva}
+\usecasedesc{se l'utente, all'interno del dominio, effettua la ricerca di una risorsa non presente, il sistema informa l'utente di questa mancanza e fornisce istruzioni per la segnalazione}
+\usecasepost{l'utente visualizza la pagina di segnalazione di risorsa non presente e decide se segnalare la mancanza o tornare alla DASHBOARD}
+\label{uc:lista_progetti}
+\end{usecase}
+
 \section{Tracciamento dei requisiti}
 
 Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
