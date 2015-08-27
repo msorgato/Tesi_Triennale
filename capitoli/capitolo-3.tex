@@ -128,6 +128,15 @@ conoscenze acquisite);
 
 \section{Progettazione Architetturale}
 
+\subsection{Frontend REST}
+La struttura base dell'applicativo SkillMatrix è un \gls{frontend} \gls{rest}. Un \gls{frontend} di quest tipo ha diversi vantaggi, uno tra tutti la modularità che si può ottenere da client a server.\\
+Con un tipo di architettura come questo, infatti, il client ed il server rimangono fortemente separati, limitando le chiamate a dei singoli punti di accesso del server. Questa modularità consente una maggiore manutenibilità di entrambe le parti, garantendo allo stesso modo delle interfacce comuni per i client che vogliono comunicare con il server \gls{rest}.\\
+Per creare un client \gls{rest}, si ha bisogno di:
+\begin{itemize}
+	\item un client \gls{http};
+	\item le \gls{uri} delle risorse a cui vogliamo accedere;
+\end{itemize}
+
 \subsection{Architettura Generale}
 %ANGULAR MVC E 2-WAY DATA BINDING
 
