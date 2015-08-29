@@ -12,10 +12,30 @@
 
 %**************************************************************
 
-\section{Angular MVC}
+\section{Architettura di AngularJS}
 AngularJS è stato il framework maggiormente utilizzato in questo stage e mi ha consentito di implementare l'intero progetto agilmente.\\
 Alla base del framework, è collocato il design pattern \gls{mvc}, leggermente modificato per adattarsi alle funzionalità di AngularJS. Il design pattern che ne risulta è qualcosa di più flessibile del classico \gls{mvc}, consentendo agli sviluppatori una maggior libertà di utilizzo.\\
 Ovviamente ci sono delle direttive e delle best practice consigliate, soprattutto se si intende creare un \gls{frontend} davvero \gls{rest}-ful.
+
+\subsection{Model}
+
+
+\subsection{View}
+Le viste realizzate con AngularJS sono essenzialmente pagine web con delle funzionalità di \emph{markup} aggiuntive. All'interno di una pagina scritta in codice \gls{html}, si possono utilizzare delle direttive di AngularJS che verranno interpretate prima di renderizzare la pagina. Tramite queste direttive è possibile visualizzare dati del modello, modificarli in \emph{real time} grazie al \emph{Two-way data binding} richiamare funzioni di uno specifico controller e molto altro.\\
+La classica dicitura di AngularJS per identificare un'espressione da interpretare si ottiene racchiudendo l'espressione tra due parentesi graffe: 
+\begin{verbatim}
+{{ espressione }}
+\end{verbatim}
+All'interno di questa dicitura, ogni espressione viene valutata e il suo risultato viene renderizzato nella pagina web. Se, ad esempio, nel \emph{template} \gls{html} si inserisce un'operazione matematica all'interno delle doppie graffe, una volta renderizzata la pagina il risultato dell'operazione (se possibile) verrà mostrato al posto dell'espressione.\\
+Oltre a questa funzionalità, AngularJS mette a disposizione una grande varietà di direttive per manipolare il \gls{dom}, come iteratori per scorrere insiemi di dati o filtri da applicare ad una collezione per limitarne la visualizzazione.
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\columnwidth]{concepts-databinding1} 
+    \caption{Esempio di Template di una vista e Data Binding}
+\end{figure}
+
+\subsection{Controller}
 
 \subsection{Two-way Data Binding}
 Una funzionalità importante che AngularJS espone è il cosiddetto \emph{Two Way Data Binding}. Si parla di \emph{legame doppio tra dati} quando una variabile del modello è legata ad un elemento che può cambiare ed al contempo mostrare il contenuto della variabile stessa. In una vista di AngularJS, ogniqualvolta un elemento che applica il \emph{Two Way Data Binding} viene modificato, il corrispondente campo nel modello viene notificato e aggiornato correttamente.\\
