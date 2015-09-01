@@ -15,7 +15,7 @@
 \section{Architettura di AngularJS}
 AngularJS è stato il framework maggiormente utilizzato in questo stage e mi ha consentito di implementare l'intero progetto agilmente.\\
 Alla base del framework, è collocato il design pattern \gls{mvc}, leggermente modificato per adattarsi alle funzionalità di AngularJS. Il design pattern che ne risulta è qualcosa di più flessibile del classico \gls{mvc}, consentendo agli sviluppatori una maggior libertà di utilizzo.\\
-Ovviamente ci sono delle direttive e delle best practice consigliate, soprattutto se si intende creare un \gls{frontend} davvero \gls{rest}-ful.
+Ovviamente ci sono delle direttive e delle \emph{best practice} consigliate, soprattutto se si intende creare un \gls{front-end} davvero \gls{rest}-ful.
 
 \subsection{Model}
 
@@ -36,6 +36,14 @@ Oltre a questa funzionalità, AngularJS mette a disposizione una grande varietà
 \end{figure}
 
 \subsection{Controller}
+I controller in AngularJS sono ciò che implementa la logica applicativa. Vengono legati al \emph{template} di una pagina tramite la direttiva \textbf{ng-controller} posta all'interno di un elemento \gls{html}. Così facendo, si invoca il costruttore del controller designato; lo \emph{scope} del controller appena creato è l'elemento in cui è stato dichiarato e gli eventuali nodi figli dell'elemento stesso.\\
+Il principale scopo dei controller è di esporre funzionalità alle espressioni ed alle direttive utilizzate all'interno delle pagine web. Questo si ottiene aggiungendo metodi e proprietà all'oggetto \textbf{\$scope} che verrà condiviso con la vista. Questo oggetto in particolare permette di realizzare il cosiddetto \emph{view-model}, ovvero quella parte del \emph{model} che verrà presentata alla \emph{view}. Inoltre, tutte le proprietà associate al controller saranno rese disponibili al \emph{template}, nello \emph{scope} che compete al controller.
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.75\columnwidth]{concepts-databinding2} 
+    \caption{Esempio di legame tra template e Controller}
+\end{figure}
 
 \subsection{Two-way Data Binding}
 Una funzionalità importante che AngularJS espone è il cosiddetto \emph{Two Way Data Binding}. Si parla di \emph{legame doppio tra dati} quando una variabile del modello è legata ad un elemento che può cambiare ed al contempo mostrare il contenuto della variabile stessa. In una vista di AngularJS, ogniqualvolta un elemento che applica il \emph{Two Way Data Binding} viene modificato, il corrispondente campo nel modello viene notificato e aggiornato correttamente.\\
@@ -55,10 +63,10 @@ In AngularJS, si usa la direttiva \textbf{ng-model} per legare una variabile del
 %**************************************************************
 
 
-\section{Stub Backend}
-Il progetto di stage ha avuto come oggetto la realizzazione di un \gls{frontend} gestionale, senza però avere al contempo un \gls{backend} funzionante. Per le verifiche funzionali, quindi, ho avuto bisogno di realizzare un \gls{backend} fittizio, il quale mi consentisse di effettuare chiamate alle \gls{api} concordate con il Responsabile di Progetto per il backend vero e proprio.\\
-Per realizzare questo \gls{backend} sono ricorso a delle feature fornite dalle librerie di AngularJS adibite al testing di unità. Durante il testing delle funzionalità di una componente, le richieste ad un server funzionante vengono sostituite con una chiamata ad hoc che deve rispettare certe precondizioni e che restituisce dei dati prestabiliti. Il concetto del \gls{backend} di \gls{stub} che ho utilizzato è lo stesso. In particolare, grazie all'utilizzo di espressioni regolari per filtrare le chiamate \gls{rest}, sono stato in grado di intercettare tali chiamate e di farle gestire al mio \gls{backend} ad hoc, con risposte prestabilite.\\
-Tutto ciò è stato possibile gran parte grazie al servizio \textbf{\$httpBackend} di AngularJS, il quale contiene metodi di intercettazione di chiamate \gls{rest} e di gestione di richieste e risposte (e relativi \emph{header}) \gls{http}. Il frammento sottostante è un esempio di una chiamata \gls{http} gestita dal \gls{backend} di \gls{stub}:
+\section{Stub Back-end}
+Il progetto di stage ha avuto come oggetto la realizzazione di un \gls{front-end} gestionale, senza però avere al contempo un \gls{back-end} funzionante. Per le verifiche funzionali, quindi, ho avuto bisogno di realizzare un \gls{back-end} fittizio, il quale mi consentisse di effettuare chiamate alle \gls{api} concordate con il Responsabile di Progetto per il \gls{back-end} vero e proprio.\\
+Per realizzare questo \gls{back-end} sono ricorso a delle feature fornite dalle librerie di AngularJS adibite al testing di unità. Durante il testing delle funzionalità di una componente, le richieste ad un server funzionante vengono sostituite con una chiamata ad hoc che deve rispettare certe precondizioni e che restituisce dei dati prestabiliti. Il concetto del \gls{back-end} di \gls{stub} che ho utilizzato è lo stesso. In particolare, grazie all'utilizzo di espressioni regolari per filtrare le chiamate \gls{rest}, sono stato in grado di intercettare tali chiamate e di farle gestire al mio \gls{back-end} ad hoc, con risposte prestabilite.\\
+Tutto ciò è stato possibile gran parte grazie al servizio \textbf{\$httpBackend} di AngularJS, il quale contiene metodi di intercettazione di chiamate \gls{rest} e di gestione di richieste e risposte (e relativi \emph{header}) \gls{http}. Il frammento sottostante è un esempio di una chiamata \gls{http} gestita dal \gls{back-end} di \gls{stub}:
 
 \begin{verbatim}
 $httpBackend.whenGET(/\/api\/\d.\d\/users\/\w*\/qualification/).respond(function(method, url, data, headers) {
