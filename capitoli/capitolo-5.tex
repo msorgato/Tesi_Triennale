@@ -18,7 +18,15 @@ Alla base del framework, è collocato il design pattern \gls{mvc}, leggermente m
 Ovviamente ci sono delle direttive e delle \emph{best practice} consigliate, soprattutto se si intende creare un \gls{front-end} davvero \gls{rest}-ful.
 
 \subsection{Model}
+In AngularJS, il "`\emph{model}"' è realizzato con precise strutture dati. Innanzitutto, la logica di business dell'applicazione si colloca nei cosiddetti \emph{servizi}. I servizi sono dei \emph{singleton} istanziati con tecnica \emph{lazy}, ovvero alla prima invocazione. In queste strutture è collocata tutta la logica che è indipendente dalla \emph{view}, puntando al suo massimo riutilizzo.\\
+Differentemente dai controller, le \emph{Factory} dei servizi vengono richiamate dal sistema di \emph{Dependendcy Injection}. Questo avviene passando come argomento al construttore di una struttura il nome del servizio da richiamare; sarà poi compito dell'\emph{injector} di AngularJS richiamare la corretta \emph{factory} del servizio richiesto.\\
+I servizi vegono utilizzati inoltre (e soprattutto) per gestire i dati sensibili dell'utenza e dei vari oggetti presenti nel \gls{back-end}. Sono loro, infatti, gli esecutori materiali delle richieste \gls{rest} al \gls{back-end}, grazie alla direttiva \textbf{\$http}; i dati risultanti verranno poi forniti alle viste, se necessario, passando per gli adeguati controller.
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.7\columnwidth]{concepts-module-service} 
+    \caption{Esempio di legame tra vista-controller-servizio}
+\end{figure}
 
 \subsection{View}
 Le viste realizzate con AngularJS sono essenzialmente pagine web con delle funzionalità di \emph{markup} aggiuntive. All'interno di una pagina scritta in codice \gls{html}, si possono utilizzare delle direttive di AngularJS che verranno interpretate prima di renderizzare la pagina. Tramite queste direttive è possibile visualizzare dati del modello, modificarli in \emph{real time} grazie al \emph{Two-way data binding} richiamare funzioni di uno specifico controller e molto altro.\\
@@ -55,6 +63,8 @@ In AngularJS, si usa la direttiva \textbf{ng-model} per legare una variabile del
     \caption{Doppio legame tra vista e modello di AngularJS}
 \end{figure}
 
+\subsection{Dependency Injection}
+%ci vuole per forza. Senza questa, non si capisce un cazzo della logica di AngularJS
 
 %**************************************************************
 
