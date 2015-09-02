@@ -20,7 +20,7 @@ Ovviamente ci sono delle direttive e delle \emph{best practice} consigliate, sop
 \subsection{Model}
 In AngularJS, il "`\emph{model}"' è realizzato con precise strutture dati. Innanzitutto, la logica di business dell'applicazione si colloca nei cosiddetti \emph{servizi}. I servizi sono dei \emph{singleton} istanziati con tecnica \emph{lazy}, ovvero alla prima invocazione. In queste strutture è collocata tutta la logica che è indipendente dalla \emph{view}, puntando al suo massimo riutilizzo.\\
 Differentemente dai controller, le \emph{Factory} dei servizi vengono richiamate dal sistema di \emph{Dependendcy Injection}. Questo avviene passando come argomento al construttore di una struttura il nome del servizio da richiamare; sarà poi compito dell'\emph{injector} di AngularJS richiamare la corretta \emph{factory} del servizio richiesto.\\
-I servizi vegono utilizzati inoltre (e soprattutto) per gestire i dati sensibili dell'utenza e dei vari oggetti presenti nel \gls{back-end}. Sono loro, infatti, gli esecutori materiali delle richieste \gls{rest} al \gls{back-end}, grazie alla direttiva \textbf{\$http}; i dati risultanti verranno poi forniti alle viste, se necessario, passando per gli adeguati controller.
+I servizi vegono utilizzati inoltre (e soprattutto) per gestire i dati sensibili dell'utenza e dei vari oggetti presenti nel \gls{back-end}. Sono loro, infatti, gli esecutori materiali delle richieste \gls{rest} al \gls{back-end}, grazie alle direttive apposite, come \textbf{\$http} e \textbf{\$resource}; i dati risultanti verranno poi forniti alle viste, se necessario, passando per gli adeguati controller.
 
 \begin{figure}[!h] 
     \centering 
@@ -64,7 +64,15 @@ In AngularJS, si usa la direttiva \textbf{ng-model} per legare una variabile del
 \end{figure}
 
 \subsection{Dependency Injection}
-%ci vuole per forza. Senza questa, non si capisce un cazzo della logica di AngularJS
+\emph{Dependency Injection} è un design pattern creato per gestire e risolvere le varie dipendenze tra più moduli software, e viene utilizzato all'interno di questo particale \emph{framework} JavaScript.\\
+La responsabilità di fornire le varie componenti richieste dalle dipendenze è demandata al sottosistema di gestione delle iniziezioni di AngularJS. Ogni volta che si dichiara una componente, viene registrata al modulo corrispondente; in questo modo, il sistema di gestione delle dipendenze può riconoscere la componente ed usarla dove è richiesto.\\
+Quando è richiesta una dipendenza, l'iniettore controlla il nome con cui è stata richiesta e la cerca nelle dipendenze registrate nel modulo, per iniettarla dove richiesto, se presente.
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.7\columnwidth]{concepts-module-injector} 
+    \caption{Esempio di configurazione di una factory per l'iniettore}
+\end{figure}
 
 %**************************************************************
 
