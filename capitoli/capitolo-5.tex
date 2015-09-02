@@ -83,8 +83,18 @@ Nelle \gls{uri} delle richieste, la dicitura \textbf{vx} sta ad indicare il nume
 \subsection{Informazioni utente}
 
 \paragraph{Lettura}
+
+\subparagraph{URL:}
+/api/vx/users/:username
+\subparagraph{Metodo:}
+GET
+\subparagraph{Contenuto della richiesta:}
+nessuno
+\subparagraph{Risposte:}
 \begin{itemize}
-	\item[\textbf{cose}] cose;
+	\item[200] la risposta contiene il \gls{json} compatto con le proprietà utente;
+	\item[404] se l'utente non è presente;
+	\item[403] se l'utente non è autorizzato ad accedere all'informazione.
 \end{itemize}
 
 \subsection{Esperienze professionali}
