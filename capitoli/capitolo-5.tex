@@ -279,53 +279,49 @@ file \gls{json} contenente le modifiche da applicare alla qualificazione dell'ut
 
 \subsubsection{Lettura}
 \paragraph{URL}
-/api/vx/users/:username/experiences
+/api/vx/users/:username/skills
 \paragraph{Metodo}
 GET
 \paragraph{Contenuto della richiesta}
 nessuno
 \paragraph{Risposte}
 \begin{itemize}
-	\item[200] la risposta contiene il \gls{json} con l'\emph{array} di esperienze;
+	\item[200] la risposta contiene il \gls{json} con l'\emph{array} di \emph{skill};
 	\item[404] se la risorsa non è presente;
 	\item[403] se l'utente non è autorizzato ad accedere all'informazione.
 \end{itemize}
 
 
-\subsubsection{Inserimento di una nuova esperienza}
+\subsubsection{Inserimento di una nuova skill}
 \paragraph{URL}
-/api/vx/users/:username/experiences
+/api/vx/users/:username/skills
 \paragraph{Metodo}
 PUT
 \paragraph{Contenuto della richiesta}
 file \gls{json} con la seguente formattazione:
 \begin{verbatim}
 {
-  'role': 'ruolo_aziendale',
-  'company': 'nome_azienda',
-  'managerName': 'nome_responsabile',
-  'managerMail': 'mail_responsabile',
-  'beginDate': 'data_ISO',
-  'endDate': 'data_ISO',
-  'description': "breve descrizione dell'esperienza lavorativa",
-  'area': 'area_competenza',
-  'technologies': 'stack_utilizzati'
+  'area': 'area_skill',
+  'scope': 'ambito_skill',
+  'domain': 'dominio_skill',
+  'competence': 'array_versioni_dominio',
+  'level': Junior/Intermediate/Senior
 }
 \end{verbatim}
 \paragraph{Risposte}
 \begin{itemize}
-	\item[201] la risposta contiene il \gls{json} dell'esperienza appena creata;
+	\item[201] la risposta contiene il \gls{json} della \emph{skill} appena creata;
 	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
-	\item[403] se l'utente non è autorizzato a creare una nuova esperienza.
+	\item[403] se l'utente non è autorizzato a creare una nuova \emph{skill}.
 \end{itemize}
 
-\subsubsection{Modifica dei dati di un'esperienza}
+\subsubsection{Modifica dei dati di una skill}
 \paragraph{URL}
-/api/vx/users/:username/esperiences/:experience
+/api/vx/users/:username/skills/:skill
 \paragraph{Metodo}
 PATCH
 \paragraph{Contenuto della richiesta}
-file \gls{json} contenente le modifiche da applicare all'esperienza dell'utente
+file \gls{json} contenente le modifiche da applicare alla \emph{skill} dell'utente
 \paragraph{Risposte}
 \begin{itemize}
 	\item[204] corpo vuoto;
