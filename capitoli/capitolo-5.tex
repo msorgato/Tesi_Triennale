@@ -331,6 +331,74 @@ file \gls{json} contenente le modifiche da applicare alla \emph{skill} dell'uten
 
 \subsection{Progetti associati}
 
+\subsubsection{Lettura lista dei progetti associati all'utente}
+\paragraph{URL}
+/api/vx/users/:username/projects
+\paragraph{Metodo}
+GET
+\paragraph{Contenuto della richiesta}
+nessuno
+\paragraph{Risposte}
+\begin{itemize}
+	\item[200] la risposta contiene il \gls{json} con l'\emph{array} di nomi dei progetti associati;
+	\item[404] se la risorsa non è presente;
+	\item[403] se l'utente non è autorizzato ad accedere all'informazione.
+\end{itemize}
+
+\subsubsection{Lettura delle informazioni di un progetto}
+\paragraph{URL}
+/api/vx/users/:username/projects/:projectname
+\paragraph{Metodo}
+GET
+\paragraph{Contenuto della richiesta}
+nessuno
+\paragraph{Risposte}
+\begin{itemize}
+	\item[200] la risposta contiene il \gls{json} con le proprietà del progetto richiesto;
+	\item[404] se la risorsa non è presente;
+	\item[403] se l'utente non è autorizzato ad accedere all'informazione.
+\end{itemize}
+
+\subsubsection{Inserimento di un nuovo progetto}
+\paragraph{URL}
+/api/vx/users/:username/projects/:projectname
+\paragraph{Metodo}
+PUT
+\paragraph{Contenuto della richiesta}
+file \gls{json} con la seguente formattazione:
+\begin{verbatim}
+{
+  'projectTitle': 'titolo_progetto',
+  'description': 'breve descrizione del progetto',
+  'client': 'committente',
+  'beginDate': 'data_ISO',
+  'endDate': 'data_ISO',
+  'area': 'area_progetto',
+  'technologies': 'array di tecnologie',
+  'team': 'array di sviluppatori'
+}
+\end{verbatim}
+\paragraph{Risposte}
+\begin{itemize}
+	\item[201] la risposta contiene il \gls{json} del progetto appena creato;
+	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
+	\item[403] se l'utente non è autorizzato a creare un nuovo progetto.
+\end{itemize}
+
+\subsubsection{Modifica dei dati di un progetto}
+\paragraph{URL}
+/api/vx/users/:username/projects/:projectname
+\paragraph{Metodo}
+PATCH
+\paragraph{Contenuto della richiesta}
+file \gls{json} contenente le modifiche da applicare al progetto
+\paragraph{Risposte}
+\begin{itemize}
+	\item[204] corpo vuoto;
+	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
+	\item[403] se l'utente non è autorizzato a modificare l'entità.
+\end{itemize}
+
 %**************************************************************
 
 
@@ -340,7 +408,8 @@ Per realizzare questo \gls{back-end} sono ricorso a delle feature fornite dalle 
 Tutto ciò è stato possibile gran parte grazie al servizio \textbf{\$httpBackend} di AngularJS, il quale contiene metodi di intercettazione di chiamate \gls{rest} e di gestione di richieste e risposte (e relativi \emph{header}) \gls{http}. Il frammento sottostante è un esempio di una chiamata \gls{http} gestita dal \gls{back-end} di \gls{stub}:
 
 \begin{verbatim}
-$httpBackend.whenGET(/\/api\/\d.\d\/users\/\w*\/qualification/).respond(function(method, url, data, headers) {
+$httpBackend.whenGET(/\/api\/\d.\d\/users\/\w*\/qualification/)
+.respond(function(method, url, data, headers) {
   console.log('Received these data:', method, url, data, headers);
   var getStatus,
    getData = {},
