@@ -148,9 +148,190 @@ file \gls{json} contenente le modifiche da applicare all'utente designato
 
 \subsection{Esperienze professionali}
 
+\subsubsection{Lettura}
+\paragraph{URL}
+/api/vx/users/:username/experiences
+\paragraph{Metodo}
+GET
+\paragraph{Contenuto della richiesta}
+nessuno
+\paragraph{Risposte}
+\begin{itemize}
+	\item[200] la risposta contiene il \gls{json} con l'\emph{array} di esperienze;
+	\item[404] se la risorsa non è presente;
+	\item[403] se l'utente non è autorizzato ad accedere all'informazione.
+\end{itemize}
+
+
+\subsubsection{Inserimento di una nuova esperienza}
+\paragraph{URL}
+/api/vx/users/:username/experiences
+\paragraph{Metodo}
+PUT
+\paragraph{Contenuto della richiesta}
+file \gls{json} con la seguente formattazione:
+\begin{verbatim}
+{
+  'role': 'ruolo_aziendale',
+  'company': 'nome_azienda',
+  'managerName': 'nome_responsabile',
+  'managerMail': 'mail_responsabile',
+  'beginDate': 'data_ISO',
+  'endDate': 'data_ISO',
+  'description': "breve descrizione dell'esperienza lavorativa",
+  'area': 'area_competenza',
+  'technologies': 'stack_utilizzati'
+}
+\end{verbatim}
+\paragraph{Risposte}
+\begin{itemize}
+	\item[201] la risposta contiene il \gls{json} dell'esperienza appena creata;
+	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
+	\item[403] se l'utente non è autorizzato a creare una nuova esperienza.
+\end{itemize}
+
+\subsubsection{Modifica dei dati di un'esperienza}
+\paragraph{URL}
+/api/vx/users/:username/esperiences/:experience
+\paragraph{Metodo}
+PATCH
+\paragraph{Contenuto della richiesta}
+file \gls{json} contenente le modifiche da applicare all'esperienza dell'utente
+\paragraph{Risposte}
+\begin{itemize}
+	\item[204] corpo vuoto;
+	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
+	\item[403] se l'utente non è autorizzato a modificare l'entità.
+\end{itemize}
+
+
 \subsection{Titoli di studio ed abilitazioni professionali}
 
+\subsubsection{Lettura}
+\paragraph{URL}
+/api/vx/users/:username/qualifications
+\paragraph{Metodo}
+GET
+\paragraph{Contenuto della richiesta}
+nessuno
+\paragraph{Risposte}
+\begin{itemize}
+	\item[200] la risposta contiene il \gls{json} con l'\emph{array} di qualificazioni;
+	\item[404] se la risorsa non è presente;
+	\item[403] se l'utente non è autorizzato ad accedere all'informazione.
+\end{itemize}
+
+
+\subsubsection{Inserimento di una nuova qualificazione}
+\paragraph{URL}
+/api/vx/users/:username/qualifications
+\paragraph{Metodo}
+PUT
+\paragraph{Contenuto della richiesta}
+file \gls{json} con una tra le seguenti formattazioni:
+\begin{itemize}
+\item se la qualificazione in questione non è un \emph{workshop}, ovvero non è un prodotto:
+\begin{verbatim}
+{
+  'type': 'tipo_certificazione',
+  'authority': 'ente_di_rilascio',
+  'address': 'recapito_ente',
+  'grade': 'grado_certificazione',
+  'earnDate': 'data_ISO'
+}
+\end{verbatim}
+\item se la qualificazione in questione è un \emph{workshop}:
+\begin{verbatim}
+{
+  'type': 'workshop',
+  'authority': 'ente_di_rilascio',
+  'address': 'recapito_ente',
+  'grade': 'grado_certificazione',
+  'earnDate': 'data_ISO',
+  'vendor': 'committente',
+  'product': 'nome_workshop',
+  'expireDate': 'data_ISO'
+}
+\end{verbatim}
+\end{itemize}
+\paragraph{Risposte}
+\begin{itemize}
+	\item[201] la risposta contiene il \gls{json} della qualificazione appena creata;
+	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
+	\item[403] se l'utente non è autorizzato a creare una nuova qualificazione.
+\end{itemize}
+
+\subsubsection{Modifica dei dati di una qualificazione}
+\paragraph{URL}
+/api/vx/users/:username/qualifications/:qualification
+\paragraph{Metodo}
+PATCH
+\paragraph{Contenuto della richiesta}
+file \gls{json} contenente le modifiche da applicare alla qualificazione dell'utente
+\paragraph{Risposte}
+\begin{itemize}
+	\item[204] corpo vuoto;
+	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
+	\item[403] se l'utente non è autorizzato a modificare l'entità.
+\end{itemize}
+
 \subsection{Skill}
+
+\subsubsection{Lettura}
+\paragraph{URL}
+/api/vx/users/:username/experiences
+\paragraph{Metodo}
+GET
+\paragraph{Contenuto della richiesta}
+nessuno
+\paragraph{Risposte}
+\begin{itemize}
+	\item[200] la risposta contiene il \gls{json} con l'\emph{array} di esperienze;
+	\item[404] se la risorsa non è presente;
+	\item[403] se l'utente non è autorizzato ad accedere all'informazione.
+\end{itemize}
+
+
+\subsubsection{Inserimento di una nuova esperienza}
+\paragraph{URL}
+/api/vx/users/:username/experiences
+\paragraph{Metodo}
+PUT
+\paragraph{Contenuto della richiesta}
+file \gls{json} con la seguente formattazione:
+\begin{verbatim}
+{
+  'role': 'ruolo_aziendale',
+  'company': 'nome_azienda',
+  'managerName': 'nome_responsabile',
+  'managerMail': 'mail_responsabile',
+  'beginDate': 'data_ISO',
+  'endDate': 'data_ISO',
+  'description': "breve descrizione dell'esperienza lavorativa",
+  'area': 'area_competenza',
+  'technologies': 'stack_utilizzati'
+}
+\end{verbatim}
+\paragraph{Risposte}
+\begin{itemize}
+	\item[201] la risposta contiene il \gls{json} dell'esperienza appena creata;
+	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
+	\item[403] se l'utente non è autorizzato a creare una nuova esperienza.
+\end{itemize}
+
+\subsubsection{Modifica dei dati di un'esperienza}
+\paragraph{URL}
+/api/vx/users/:username/esperiences/:experience
+\paragraph{Metodo}
+PATCH
+\paragraph{Contenuto della richiesta}
+file \gls{json} contenente le modifiche da applicare all'esperienza dell'utente
+\paragraph{Risposte}
+\begin{itemize}
+	\item[204] corpo vuoto;
+	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
+	\item[403] se l'utente non è autorizzato a modificare l'entità.
+\end{itemize}
 
 \subsection{Progetti associati}
 
