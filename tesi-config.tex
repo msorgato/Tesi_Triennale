@@ -197,6 +197,27 @@
 \newcommand{\risksolution}[1]{\textbf{\\Soluzione:} #1.}
 
 %**************************************************************
+% Environment per ``API''
+%**************************************************************
+
+%%%% Parameters
+% #1: Title
+\newenvironment{api}[1]{
+    \textbf{#1}   % display the title before the 
+                                        % content of the environment is displayed 
+}{
+    \par\medskip
+}
+
+\newcommand{\apiurl}[1]{\textbf{\\URL:} #1.}
+
+\newcommand{\apimethod}[1]{\textbf{\\Metodo:} #1.}
+
+\newcommand{\apireq}[1]{\textbf{\\Contenuto della richiesta:} #1.}
+
+\newcommand{\apisolution}[1]{\textbf{\\Soluzione:} #1.}
+
+%**************************************************************
 % Environment per ``use case''
 %**************************************************************
 \newcounter{usecasecounter}             % define a counter

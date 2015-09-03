@@ -82,19 +82,68 @@ Nelle \gls{uri} delle richieste, la dicitura \textbf{vx} sta ad indicare il nume
 
 \subsection{Informazioni utente}
 
-\paragraph{Lettura}
+\subsubsection{Lettura}
 
-\subparagraph{URL:}
+\paragraph{URL}
 /api/vx/users/:username
-\subparagraph{Metodo:}
+\paragraph{Metodo}
 GET
-\subparagraph{Contenuto della richiesta:}
+\paragraph{Contenuto della richiesta}
 nessuno
-\subparagraph{Risposte:}
+\paragraph{Risposte}
 \begin{itemize}
 	\item[200] la risposta contiene il \gls{json} compatto con le proprietà utente;
 	\item[404] se l'utente non è presente;
 	\item[403] se l'utente non è autorizzato ad accedere all'informazione.
+\end{itemize}
+
+
+\subsubsection{Invio di dati per l'autenticazione}
+\paragraph{URL}
+/api/vx/login
+\paragraph{Metodo}
+POST
+\paragraph{Contenuto della richiesta}
+file \gls{json} con la seguente formattazione:
+\begin{verbatim}
+{
+  'username': 'some_username',
+  'password': 'some_password'
+}
+\end{verbatim}
+\paragraph{Risposte}
+\begin{itemize}
+	\item[200] la risposta contiene il \gls{json} compatto con le proprietà utente, più un \emph{token} utilizzato per comporre l'\emph{header} di autenticazione;
+	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
+	\item[403] se l'autenticazione non è andata a buon fine.
+\end{itemize}
+
+\subsubsection{Creazione di un nuovo utente}
+\paragraph{URL}
+/api/vx/users
+\paragraph{Metodo}
+PUT
+\paragraph{Contenuto della richiesta}
+file \gls{json} compatto contenente username ed email
+\paragraph{Risposte}
+\begin{itemize}
+	\item[201] la risposta contiene l'\emph{id} della proprietà creata;
+	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
+	\item[403] se l'utente non è autorizzato alla creazione di un nuovo utente.
+\end{itemize}
+
+\subsubsection{Modifica dei dati utente}
+\paragraph{URL}
+/api/vx/users/:username
+\paragraph{Metodo}
+PATCH
+\paragraph{Contenuto della richiesta}
+file \gls{json} contenente le modifiche da applicare all'utente designato
+\paragraph{Risposte}
+\begin{itemize}
+	\item[204] corpo vuoto;
+	\item[400] se gli \emph{header} sono invalidi oppure se il contenuto della richiesta non è corretto;
+	\item[403] se l'utente non è autorizzato a modificare l'entità.
 \end{itemize}
 
 \subsection{Esperienze professionali}
