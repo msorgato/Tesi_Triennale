@@ -487,4 +487,14 @@ Descrizione namespace 1.
 
 %**************************************************************
 \section{Codifica}
-A causa del ciclo di vita \emph{Agile} adottato nello sviluppo di questo progetto, la progettazione e la codifica sono andate di pari passo. La suddivisione del lavoro in \emph{user stories} e l'utilizzo della \emph{kanban} hanno reso molto più disciplinata l'applicazione della metodologia \emph{Agile}, mantenendo comunque la flessibilità e gli aspetti positivi di questo ciclo di vita software. Infatti, \emph{Agile} aumenta molto l'interazione tra proponente e sviluppatore, stimolando l'acquisizione di \emph{feedback} rapidi, cosa molto importante soprattutto in un contesto di stage, a mio avviso.\\
+A causa del ciclo di vita \emph{Agile} adottato nello sviluppo di questo progetto, la progettazione e la codifica sono andate di pari passo. La suddivisione del lavoro in \emph{user stories} e l'utilizzo della \emph{kanban} hanno reso molto più disciplinata l'applicazione della metodologia \emph{Agile}, mantenendo comunque la flessibilità e gli aspetti positivi di questo ciclo di vita software. Infatti, \emph{Agile} aumenta molto l'interazione tra proponente e sviluppatore, stimolando l'acquisizione di \emph{feedback} rapidi, cosa molto importante soprattutto in un contesto di stage, a mio avviso.
+
+\subsection{Callback e Promesse JavaScript}
+Una delle peculiarità di JavaScript è la gestione delle funzioni. Infatti, in questo linguaggio e nei suoi framework, le funzioni sono considerate degli \emph{oggetti} veri e propri. Ciò consente ad un programmatore alcune operazioni particolari con le funzioni, come ad esempio il passaggio di una funzione come argomento di un'altra funzione.\\
+Da questo principio nascono le \emph{callback}, ovvero l'atto di richiamare all'interno di una funzione, un'altra funzione passata come argomento. Ad esempio:
+\begin{verbatim}
+function calcola(func, arg1, arg2) {
+  return func(arg1, arg2);
+}
+\end{verbatim}
+Nell'esempio soprastante, la funzione \emph{func} richiamata all'interno di \emph{calcola}, è stata passata come argomento ed utilizza come propri argomenti \emph{arg1} ed \emph{arg2}. Questa proprietà permette anche, ad esempio, di richiamare selettivamente una \emph{callback} piuttosto che un'altra, o cambiandone gli argomenti a seconda degli stati dell'esecuzione.  
