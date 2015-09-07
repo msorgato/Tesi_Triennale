@@ -497,4 +497,34 @@ function calcola(func, arg1, arg2) {
   return func(arg1, arg2);
 }
 \end{verbatim}
-Nell'esempio soprastante, la funzione \emph{func} richiamata all'interno di \emph{calcola}, è stata passata come argomento ed utilizza come propri argomenti \emph{arg1} ed \emph{arg2}. Questa proprietà permette anche, ad esempio, di richiamare selettivamente una \emph{callback} piuttosto che un'altra, o cambiandone gli argomenti a seconda degli stati dell'esecuzione.  
+Nell'esempio soprastante, la funzione \emph{func} richiamata all'interno di \emph{calcola}, è stata passata come argomento ed utilizza come propri argomenti \emph{arg1} ed \emph{arg2}. Questa proprietà permette anche, ad esempio, di richiamare selettivamente una \emph{callback} piuttosto che un'altra, o cambiandone gli argomenti a seconda degli stati dell'esecuzione.\\
+Le \emph{callback} sono state utilizzate estensivamente anche nel campo della programmazione asincrona e della gestione di eventi. Infatti, una \emph{callback} può essere invocata alla fine di un'acquisizione dati, per gestire i dati ritornati, a prescindere dal momento in cui questi saranno disponibili. Il caso tipico di esempio è una chiamata \gls{ajax}, dove la \emph{callback} viene passata come parametro alla chiamata e viene invocata al termine dell'acquisizione dei dati dalla rete.\\
+Purtroppo, però, le \emph{callback} presentano alcuni aspetti negativi:
+\begin{itemize}
+	\item scarsa leggibilità del codice e conseguente difficoltà di manutenzione;
+	\item difficoltà di composizione delle \emph{callback} e conseguente sincronizzazione delle chiamate;
+	\item difficoltà di gestione di errori all'interno delle \emph{callback}, soprattutto se queste sono delle \emph{funzioni anonime}.
+\end{itemize}
+Da questa serie di inconvenienti propri dell'utilizzo delle \emph{callback}, sono state ideate le \emph{promesse}. Questi oggetti rappresentano il risultato di una chiamata di una funzione asincrona, talvolta chiamate con il nome di \emph{future}, \emph{delay} o \emph{deferred}; tutte queste diciture garantiscono che la \emph{promessa} restituisca il dato non appena questo è disponibile.\\
+Una \emph{promessa} può trovarsi in uno dei seguenti stati:
+\begin{itemize}
+	\item \emph{pending}, quando il risultato della chiamata asincrona non è ancora disponibile;
+	\item \emph{resolved}, quando la chiamata asincrona ha prodotto un risultato valido;
+	\item \emph{rejected}, se la chiamata asincrona non ha prodotto un risultato, anche a causa di un errore da gestire.
+\end{itemize}
+Oltre a rendere il codice molto più leggibile, le \emph{promesse} consentono di ottenere una maggiore chiarezza nella programmazione e una migliore gestione degli errori che si possono verificare. Ecco un esempio di utilizzo di una \emph{promessa} in una chiamata \gls{ajax}:
+\begin{verbatim}
+var getUser = function() {
+  var deferred = Q.defer();
+  $.get("/users", [id: "12345"], deferred.resolve);
+  return deferred.promise;
+}
+ 
+getUser().then(function(user) {
+  console.log("Nome utente: " + user.Name);
+});
+\end{verbatim}
+Nell'esempio soprastante, viene prima creato l'oggetto che rappresenta la \emph{promessa} legata alla chiamata \gls{ajax} dell'utente con \emph{id} "`12345"', la quale \emph{promessa} viene ritornata dalla funzione. L'invocazione successiva di \emph{getUser()} presenta una concatenazione con il costrutto \text{then}, il quale specifica che il corpo della funzione a lui associato verrà eseguito solo quando la promessa precedente verrà risolta.
+
+%BLA BLA BLA, gestione degli errori che è sempre bella, soprattutto per far contento Mister T.%
+%link at: http://www.html.it/articoli/javascript-asincrono-le-promise-e-la-libreria-q-2/
