@@ -524,7 +524,18 @@ getUser().then(function(user) {
   console.log("Nome utente: " + user.Name);
 });
 \end{verbatim}
-Nell'esempio soprastante, viene prima creato l'oggetto che rappresenta la \emph{promessa} legata alla chiamata \gls{ajax} dell'utente con \emph{id} "`12345"', la quale \emph{promessa} viene ritornata dalla funzione. L'invocazione successiva di \emph{getUser()} presenta una concatenazione con il costrutto \text{then}, il quale specifica che il corpo della funzione a lui associato verrà eseguito solo quando la promessa precedente verrà risolta.
+Nell'esempio soprastante, viene prima creato l'oggetto che rappresenta la \emph{promessa} legata alla chiamata \gls{ajax} dell'utente con \emph{id} "12345", la quale \emph{promessa} viene ritornata dalla funzione. L'invocazione successiva di \emph{getUser()} presenta una concatenazione con il costrutto \text{then}, il quale specifica che il corpo della funzione a lui associato verrà eseguito solo quando la promessa precedente verrà risolta.\\
+Lo stato di una \emph{promessa}, inoltre, stabilisce se questa è stata risolta senza errori oppure se qualche imprevisto è avvenuto. A questo serve lo stato \emph{rejected} di una particolare \emph{promessa}, il quale concretizza che sia avvenuto un errore. L'errore verrà quindi segnalato attraverso lo stato \emph{rejected} e tutti i costrutti che utilizzeranno quella \emph{promessa} saranno segnalati e dovranno gestire il caso particolare dell'errore.\\
+Inolte è possibile concatenare più \emph{promesse} in modo controllato, così da creare una catena asincrona di esecuzione di funzioni, ma senza causare una diminuzione di chiarezza nel codice. In più, se una \emph{promessa} all'interno della catena solleva un'eccezione, sistematicamente l'errore viene gestito localmente o propagato al chiamante, con un maggior controllo nell'esecuzione.
 
-%BLA BLA BLA, gestione degli errori che è sempre bella, soprattutto per far contento Mister T.%
+\subsubsection{Promesse nel progetto}
+Come presentato nella sezione precedente, le \emph{promesse} possono venir utilizzate per gestire in modo asincrono le chiamate \gls{ajax}. Ciò è vero e largamente utilizzato anche nel framework AngularJS, dove le \emph{promesse} sono parte integrante delle direttive \textbf{\$http} e \textbf{\$resource}. Infatti, queste direttive utilizzano gli stessi costrutti derivanti dalla libreria \textbf{Q} di Kriskowal\footcite{site:q}, sia per la risoluzione delle \emph{promesse} che per la loro gestione degli errori.\\
+In particolare, la direttiva \textbf{\$http} mi è stata fondamentale per realizzare le richieste \gls{rest} e per la loro gestione tra \emph{servizi} e \emph{controller}. Qui sotto, un esempio di applicazione della direttiva \textbf{\$http} nel progetto di SkillMatrix.
+\begin{verbatim}
+expFactory.getExperiences = function(username) {
+  return $http
+    .get('/api/' + APP_VERSION.version + '/users/' + username + '/experiences');
+};
+\end{verbatim}
+
 %link at: http://www.html.it/articoli/javascript-asincrono-le-promise-e-la-libreria-q-2/
