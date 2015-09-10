@@ -542,8 +542,36 @@ expFactory.getExperiences = function(username) {
 Vado ora ad illustrare i diagrammi di attività delle funzionalità principali di \emph{SkillMatrix}. Tali diagrammi fanno riferimento al linguaggio di modellazione \gls{uml}.
 
 \subsubsection{Attività generali}
-\begin{figure}[H] 
+\begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.8\columnwidth]{usecase/activity_dashboard} 
     \caption{Diagramma di attività generale di \emph{SkillMatrix}}
 \end{figure}
+Questo diagramma delle attività rappresenta la visione generale delle operazioni che si possono compiere all'interno dell'applicazione.\\
+Dopo aver effettuato il \emph{login} con successo al sistema, si viene reindirizzati alla pagina del proprio profilo, con i propri dati aggiornati. Ora si può scegliere tra una lista di possibili menù:
+\begin{itemize}
+	\item esperienze professionali;
+	\item titoli di studio e abilitazioni professionali (qualificazioni);
+	\item skill;
+	\item progetti associati;
+	\item logout.
+\end{itemize}
+Le prime opzioni portano alla pagina di gestione corrispondente, mentre il pulsante di \emph{logout} consente di uscire dall'applicazione eliminando i dati di sessione.
+
+\subsubsection{Attività di gestione delle skill}
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.8\columnwidth]{usecase/activity_skill} 
+    \caption{Diagramma di attività di gestione delle skill di \emph{SkillMatrix}}
+\end{figure}
+Questo diagramma delle attività è più specifico del precedente ed illustra le attività eseguibili nella pagina di gestione delle \emph{skill}.\\
+Una volta giunti a questa pagina, si può decidere di filtrare la visualizzazione a seconda del livello di skill che si desidera visualizzare, sia questo \emph{Junior}, \emph{Intermediate} o \emph{Senior}, oppure una combinazione dei tre. La vista è aggiornata in \emph{real time}, dato che il filtraggio dei dati avviene in locale sulla macchina dell'utente, a seconda dei parametri selezionati.\\
+Oltre alla visualizzazione, l'utente può inserire una nuova skill nel sistema. Qui, per poter inserire una skill valida, l'utente deve specificare:
+\begin{itemize}
+	\item Area, ad esempio \emph{Java};
+	\item Ambito, ad esempio \emph{J2EE};
+	\item Dominio, ad esempio \emph{Tomcat};
+	\item Competenze, ovvero le versioni di competenza della skill;
+	\item Livello, ovvero il livello di competenza della skill, ad esempio \emph{Junior}.
+\end{itemize}
+Dopo aver compilato i campi necessari per l'inserimento, l'utente può richiedere il salvataggio della skill. Se la skill non è considerata valida (perché manca qualche parametro oppure i dati inseriti non sono validi), l'applicazione segnala tali invalidità tramite dei messaggi \emph{popup} e richiede il corretto inserimento. Se invece l'utente seleziona il pulsante di \emph{reset}, l'utente può reinserire dei nuovi dati della skill. Se infine la skill è considerata valida, l'utente viene riportato alla pagina di gestione delle skill, aggiornata con la nuova skill appena inserita.
