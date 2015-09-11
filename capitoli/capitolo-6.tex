@@ -41,12 +41,43 @@ Nella figura sottostante, presento i dati in forma tabellare, come vengono visua
 \end{figure}
 
 \subsection{Test di unità di AngularJS}
-La scrittura e l'esecuzione dei test in questo framework di JavaScript è imprescindibile. Su questa base sono nati svariati framework di testing, e AngularJS cerca di semplificare al massimo queste attività. Questo framework dispone di diverse direttive utili al fine di simulare il comportamento di componenti esterne, che possono essere anche non ancora state realizzate al tempo della scrittura del test. Infatti, AngularJS comprende anche il pacchetto \emph{angular-mocks}, il quale fornisce tutta una serie di librerie per AngularJS dedicate solamente ai test del \gls{front-end}.\\
-All'interno di questo pacchetto vi sono direttive che simulano il comportamento di ogni tipo di componente di AngularJS: dai \emph{controller}, ai \emph{servizi}, alle singole chiamate verso il \gls{back-end}. Nei singoli test di unità, infatti, è importante testare il comportamento di una componente a seconda dei dati in input, automatizzando il tutto il più possibile.\\
-Fra le tante direttive presenti nel pacchetto \emph{angular-mocks}, una delle più utili è di sicuro stata \textbf{\$httpBackend}, la quale simula il comportamento di un \gls{back-end} fittizio, al fine di controllare la struttura ed il contenuto delle chiamate effettuate al \gls{back-end}, senza per forza disporre di un \gls{back-end} e per automatizzare le attività di testing in locale.
-
-%qui ci sta un bel pezzo del codice con qualche bel servizio che fa una chiamata a $httpBackend. Pwnz
-
+La scrittura e l'esecuzione dei test nello sviluppo in linguaggio JavaScript è imprescindibile. Su questa base sono nati svariati framework di testing, ed AngularJS cerca di semplificare al massimo queste attività. Questo framework dispone di diverse direttive utili al fine di simulare il comportamento di componenti esterne, che possono essere anche non ancora state realizzate al tempo della scrittura del test. Infatti, AngularJS comprende anche il pacchetto \emph{angular-mocks}, il quale fornisce tutta una serie di librerie per AngularJS dedicate solamente ai test del \gls{front-end}.\\
+All'interno di questo pacchetto vi sono costruttori di \gls{stub} che simulano il comportamento di ogni tipo di componente di AngularJS: dai \emph{controller}, ai \emph{servizi}, alle singole chiamate verso il \gls{back-end}. Nei singoli test di unità, infatti, è importante testare il comportamento di una componente a seconda dei dati in input, automatizzando il tutto il più possibile.\\
+Fra le tante direttive presenti nel pacchetto \emph{angular-mocks}, una delle più utili è di sicuro stata \textbf{\$httpBackend}, la quale simula il comportamento di un \gls{back-end} fittizio, al fine di controllare la struttura ed il contenuto delle chiamate effettuate al \gls{back-end}, senza per forza disporre di un \gls{back-end} e per automatizzare le attività di testing in locale.\\
+\textbf{\$httpBackend} agisce in modo da frapporsi tra il \gls{front-end} di AngularJS ed il \gls{back-end}, intercettando le chiamate per analizzarne le richieste; inoltre si può fare in modo di fornire delle risposte definite al \emph{client}, in modo da testare il comportamento dell'unità che si sta verificando. L'intercettazione delle chiamate è selettiva, quindi si può scegliere di filtrare delle richieste di una specifica risorsa \gls{rest} piuttosto che un'altra.
+\begin{verbatim}
+it('should get project list from server', function() {
+  $httpBackend.expectGET('/api/' + APP_VERSION.version + '/users/' + username + '/projects')
+    .respond(200, {
+      data: {
+        projects: [
+          {
+            projectTitle: 'Smash',
+            registered: true
+          },
+          {
+            projectTitle: 'Linko',
+            registered: true
+          },
+          {
+            projectTitle: 'SkillMatrix',
+            registered: false
+          }
+        ]
+      }
+    });
+    var responseData = [];
+    ProjListFactory.getProjects(username).success(function(data) {
+      responseData = data.data.projects;
+    });
+  $httpBackend.flush();
+  expect(responseData.length).toBe(3);
+  expect(responseData[0].projectTitle).toBe('Smash');
+  expect(responseData[1].registered).toBeTruthy();
+  expect(responseData[2].registered).toBeFalsy();
+});
+\end{verbatim}
+Questo frammento di codice testa che i dati di una lista di progetti siano ottenuti e gestiti secondo la formattazione stabilita. Si può notare che la richiesta che viene intercettata è una richiesta \gls{rest} particolare, in quanto si vuole testare una singola funzionalità per volta. Vengono quindi forniti dei dati fittizi in risposta in modo da controllare il comportamento del modulo alla gestione dei dati; il modo in cui questo viene fatto in \emph{Jasmine} è di controllare che le aspettative degli output siano confrontate con i dati attuali all'esecuzione del test, per vedere se entrambi combaciano.
 
 %**************************************************************
 
