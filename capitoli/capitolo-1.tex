@@ -50,13 +50,13 @@ Progettare e costruire un’applicazione a valore aggiunto significa conoscere l
 
 \section{L'idea}
 
-Il progetto \myTitle{} nasce come strumento di gestione interna delle competenze dei dipendenti e dei progetti presenti in azienda. L'obiettivo di tale progetto è una migliore organizzazione del personale dedicato ai vari progetti, con una conseguente maggiore efficienza ed efficacia nell'assegnazione dei ruoli nei processi ed attività. Fino ad ora, all'interno di IKS, tale compito veniva svolto dalla consultazione e modifica di un foglio elettronico \emph{Excel}. Questa soluzione, oltre ad essere poco pratica e difficilmente manutenibile, ha portato all'esigenza di uno strumento più specifico ed espandibile. Da qui la creazione del progetto \myTitle{}.\\
-Lo strumento \myTitle{} è pensato per essere utilizzato da diverse tipologie di utenti, dal singolo sviluppatore al project manager.\\
+Il progetto \emph{SkillMatrix} nasce come strumento di gestione interna delle competenze dei dipendenti e dei progetti presenti in azienda. L'obiettivo di tale progetto è una migliore organizzazione del personale dedicato ai vari progetti, con una conseguente maggiore efficienza ed efficacia nell'assegnazione dei ruoli nei processi ed attività. Fino ad ora, all'interno di IKS, tale compito veniva svolto dalla consultazione e modifica di un foglio elettronico \emph{Excel}. Questa soluzione, oltre ad essere poco pratica e difficilmente manutenibile, ha portato all'esigenza di uno strumento più specifico ed espandibile. Da qui la creazione del progetto \emph{SkillMatrix}.\\
+Lo strumento \emph{SkillMatrix} è pensato per essere utilizzato da diverse tipologie di utenti, dal singolo sviluppatore al project manager.\\
 L'applicazione sarà composta da un \gls{front-end} realizzato in \emph{AngularJS}, un \gls{back-end} realizzato tramite \gls{spring} e un database di persistenza. L'attività di Stage ha riguardato la realizzazione del \gls{front-end} e la definizione delle \gls{api} \gls{rest} del \gls{back-end}.\\
-L'utente finale sviluppatore può vedere \myTitle{} come una sorta di curriculum digitale ampliato, in cui poter inserire le proprie competenze riconosciute, le esperienze acquisite ed i progetti a cui ha preso parte. Nella propria \emph{dashboard}, l'utente finale può gestire le proprie informazioni e richiedere l'inserimento di nuove entità, come nuovi progetti a cui ha preso parte, nuove skill acquisite, certificazioni esterne o interne o altri titoli formativi e le sue esperienze lavorative pregresse.\\ 
+L'utente finale sviluppatore può vedere \emph{SkillMatrix} come una sorta di curriculum digitale ampliato, in cui poter inserire le proprie competenze riconosciute, le esperienze acquisite ed i progetti a cui ha preso parte. Nella propria \emph{dashboard}, l'utente finale può gestire le proprie informazioni e richiedere l'inserimento di nuove entità, come nuovi progetti a cui ha preso parte, nuove skill acquisite, certificazioni esterne o interne o altri titoli formativi e le sue esperienze lavorative pregresse.\\ 
 Chi ha compiti di gestione (ad esempio la figura del Responsabile di progetto), utilizza lo strumento per vedere quali risorse può utilizzare per un dato progetto. In base alle competenze richieste può quindi consultare quali risorse può richiedere per svolgere il progetto con maggior efficienza ed efficacia.\\ 
 Si prefissa quindi come obiettivo la creazione di un portale aziendale unificato per una migliore gestione del personale ed il suo dislocamento all’interno dei progetti aziendali, oltre che alla gestione dei curricula vitae del personale aziendale.\\
-Per quanto riguarda l'organizzazione del progetto, è stato deciso che \myTitle{} avrebbe avuto due layer \gls{front-end} e \gls{back-end} comunicanti tramite chiamate \gls{rest}. Questo per rendere le due componenti più separate possibile, dovendo soltanto definire le \gls{api} di comunicazione tra il client ed il server. Inoltre, essendo che questo progetto di Stage ha coperto la parte \gls{front-end}, in un progetto futuro di implementazione del \gls{back-end}, il server dovrà solamente esporre le corrette funzionalità alla chiamata delle \gls{api} \gls{rest} concordate.
+Per quanto riguarda l'organizzazione del progetto, è stato deciso che \emph{SkillMatrix} avrebbe avuto due layer \gls{front-end} e \gls{back-end} comunicanti tramite chiamate \gls{rest}. Questo per rendere le due componenti più separate possibile, dovendo soltanto definire le \gls{api} di comunicazione tra il client ed il server. Inoltre, essendo che questo progetto di Stage ha coperto la parte \gls{front-end}, in un progetto futuro di implementazione del \gls{back-end}, il server dovrà solamente esporre le corrette funzionalità alla chiamata delle \gls{api} \gls{rest} concordate.
 
 
 
@@ -67,19 +67,19 @@ Per quanto riguarda l'organizzazione del progetto, è stato deciso che \myTitle{
 Questa sezione illustra i vincoli che sono stati stipulati all'inizio dell'attività di Stage, sia tecnici che organizzativi.
 
 \subsection{Tecnologici}
-I vincoli sullo stack tecnologico da utilizzare nell'implementazione di \myTitle{} sono stati fissati sin dai primi contatti. Per questo, la prima settimana di Stage è stata rivolta all'apprendimento di tali strumenti e all'integrazione con gli strumenti e le procedure aziendali.\\
+I vincoli sullo stack tecnologico da utilizzare nell'implementazione di \emph{SkillMatrix} sono stati fissati sin dai primi contatti. Per questo, la prima settimana di Stage è stata rivolta all'apprendimento di tali strumenti e all'integrazione con gli strumenti e le procedure aziendali.\\
 Tali strumenti sono:
 \begin{itemize}
 	\item \emph{AngularJS}, framework JavaScript per la scrittura di applicazioni web \gls{front-end};
-	\item \emph{Bootstrap}, libreria \gls{css} grafica per gestire la presentazione di pagine web \gls{html};
-	\item \emph{JasmineJS}, framework JavaScript utilizzato per la scrittura di test, soprattutto di unità ed \gls{e2e}. 
+	\item \emph{Bootstrap}, libreria \gls{css} grafica per gestire presentazione e formattazione di pagine web \gls{html};
+	\item \emph{Jasmine}, framework JavaScript utilizzato per la scrittura di test, soprattutto di unità ed \gls{e2e}. 
 \end{itemize}
 La scelta di queste tecnologie ovviamente non è casuale. Nello sviluppo di applicazioni web con \emph{AngularJS}, lo stack tecnologico utilizzato più diffusamente è proprio questo. L'utilizzo di \emph{Jasmine} è quasi obbligatorio, data la sua immediatezza di configurazione con \emph{AngularJS} e la filosofia stessa del framework \gls{front-end}, che è stato pensato appunto per rendere il testing più semplice.\\
-\emph{Bootstrap}, d'altro canto, è estremamente facile da integrare con qualsiasi strumento che si basi su \gls{html} per fornire le sue viste.
+\emph{Bootstrap}, d'altro canto, è estremamente facile da integrare con qualsiasi strumento che si basi su \gls{html} per fornire le sue viste, e quindi anche con lo stack corrente.
 
 \subsection{Temporali}
 Per la realizzazione di questo progetto sono state impiegate le 8 settimane di lavoro di 40 ore/settimana. Il periodo in cui si è svolto ha compreso le settimane che sono intercorse tra il 20 Aprile e il 13 Giugno, per un totale di ore compreso tra le 300 e 320 stabilite all'inizio della pianificazione.\\
-Di queste ore, le prime 40 sono state dedicate alla mia formazione sulle tecnologie adottate nel progetto e nell'istruzione sull'utilizzo degli strumenti aziendali, per poi iniziare la progettazione e lo sviluppo vero e proprio del progetto.
+Di queste ore, le prime 40 sono state dedicate alla mia formazione sulle tecnologie adottate nel progetto e nell'istruzione sull'utilizzo degli strumenti aziendali, per poi continuare con la progettazione e lo sviluppo vero e proprio del progetto.
 
 \subsection{Organizzativi}
 La realizzazione del progetto prevedeva un ciclo di vita basato sullo stile Agile. Questo è l'approccio maggiormente utilizzato all'interno dell'azienda, caratterizzato dall'applicazione dei principi dell'\emph{Agile programming} con consultazione di una \emph{kanban}.\\
@@ -109,5 +109,5 @@ Riguardo la stesura del testo, relativamente al documento sono state adottate le
 \begin{itemize}
 	\item gli acronimi, le abbreviazioni e i termini ambigui o di uso non comune menzionati vengono definiti nel glossario, situato alla fine del presente documento;
 	\item per la prima occorrenza dei termini riportati nel glossario viene utilizzata la seguente nomenclatura: \emph{parola}\glsfirstoccur;
-	\item i termini in lingua straniera o facenti parti del gergo tecnico sono evidenziati con il carattere \emph{corsivo}.
+	\item i termini in lingua straniera o facenti parti del gergo tecnico sono evidenziati con lo stile \emph{corsivo}.
 \end{itemize}
