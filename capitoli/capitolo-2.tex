@@ -4,8 +4,8 @@
 % !TEX spellcheck = it-IT
 
 %**************************************************************
-\chapter{Processi e metodologie}
-\label{cap:processi-metodologie}
+\chapter{Processi e tecnologie}
+\label{cap:processi-tecnologie}
 %**************************************************************
 
 \intro{Breve introduzione al capitolo}\\
@@ -137,12 +137,17 @@ risparmiando così tempo e risorse;
 \subsubsection{JIRA}
 \begin{figure}[htb] 
     \centering 
-    \includegraphics[width=0.4\columnwidth]{JIRA_logo} 
+    \includegraphics[width=0.3\columnwidth]{JIRA_logo} 
     \caption{Logo di JIRA}
 \end{figure}
 Jira è un prodotto proprietario finalizzato al tracciamento dei compiti, sviluppato da Atlassian dal 2002\footcite{atlassian:jira}. Esso fornisce il tracciamento di bug, compiti e funzionalità di project management. JIRA non è un acronimo, bensì il troncamento della parola giapponese \emph{Gojira}.\\
-JIRA è scritto in Java e si basa sul sistema di inversione di controllo sviluppato da Pico, su Apache OFBiz e lo stack tecnologico di WebWork 1. JIRA supporta diverse chiamate procedurali remote, quali \gls{rest}, \gls{soap} e altre. JIRA si integra con i programmi di versionamento Clearcase, CVS, Git, Mercurial, Perforce, Subversion e Team Foundation Server.\\
-Secondo i dati di Atlassian, JIRA viene usato nel tracciamento delle attività e nel project management da oltre 25,000 utenti in 122 paesi nel mondo. Alcune delle organizzazioni che usano JIRA sono Fedora Commons, Hibernate, Honeywell Aerospace, JBoss, Linden Lab, Skype, Spring Framework e The Apache Software Fundation.  
+JIRA è scritto in Java e si basa sul sistema di inversione di controllo sviluppato da Pico, su Apache OFBiz e lo stack tecnologico di WebWork 1. JIRA supporta diverse chiamate procedurali remote, quali ad esempio \gls{rest} e \gls{soap}. JIRA si integra con i programmi di versionamento Clearcase, CVS, Git, Mercurial, Perforce, Subversion e Team Foundation Server.\\
+Secondo i dati di Atlassian, JIRA viene usato nel tracciamento delle attività e nel project management da oltre 25,000 utenti in 122 paesi nel mondo. Alcune delle organizzazioni che usano JIRA sono Fedora Commons, Hibernate, Honeywell Aerospace, JBoss, Linden Lab, Skype, Spring Framework e The Apache Software Fundation.
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=0.9\columnwidth]{jira_kanban} 
+    \caption{Esempio di schermata di una kanban di JIRA}
+\end{figure}
 
 \subsubsection{Stash}
 \begin{figure}[htb] 
@@ -155,6 +160,11 @@ Esso offre un sistema di gestione dei repository a progetto, il che predispone u
 
 \paragraph{Branching}
 L’implementazione di una nuova funzionalità, secondo le strategie aziendali, viene effettuata su un nuovo branch. Questa scelta permette lo sviluppo indipendente di più feature, partendo da un punto comune (solitamente il branch “develop” del repository) e diversificando in base ai task assegnati agli sviluppatori del team.
+\begin{figure}[htb] 
+    \centering 
+    \includegraphics[width=1.0\columnwidth]{alberi} 
+    \caption{Branching e merging in STASH}
+\end{figure}
 
 \paragraph{Pull request}
 Ogniqualvolta una nuova funzionalità viene implementata, con il corrispondente completamento del ticket dell’attività di JIRA, viene creata una “pull request” per integrare il nuovo contenuto. Questa pull request viene effettuata in un branch più generale, solitamente nel branch “develop” se il prodotto è ancora in via di sviluppo, oppure direttamente nel “master” se si sta per rilasciare una nuova release del prodotto.\\
@@ -162,7 +172,7 @@ Ogni pull request non viene integrata finché non viene approvata dal responsabi
 
 \subsection{Ambiente di sviluppo}
 \subsubsection{PhPStorm}
-\begin{figure}[htb] 
+\begin{figure}[hb] 
     \centering 
     \includegraphics[width=0.4\columnwidth]{phpstorm_logo} 
     \caption{Logo di PhPStorm}

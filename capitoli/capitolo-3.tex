@@ -44,7 +44,7 @@ Si è quindi proceduto a elaborare delle possibili soluzioni per far fronte a ta
 %**************************************************************
 \section{Requisiti e obiettivi}
 L'analisi dei Requisiti è stata svolta grazie alla suddivisione i storie intrinseca nella metodologia \emph{Agile}. Infatti, la stesura di una singola storia porta molte volte all'individuazione di uno o più requisiti, per la maggior parte funzionali.\\
-La scelta delle storie da implementare è avvenuta tramite specificazione dei vari \emph{epic} noti all'inizio della pianificazione.
+La scelta delle storie da implementare è avvenuta tramite specificazione dei vari \emph{epic} noti all'inizio della pianificazione, successivamente spezzati in \emph{major} ed infine in \emph{user stories} implementabili separatamente.
 
 %**************************************************************
 \section{Pianificazione}
@@ -126,30 +126,3 @@ conoscenze acquisite);
 \end{itemize}
 
 %************************************************************************
-
-\section{Progettazione Architetturale}
-
-\subsection{Front-end REST}
-La struttura base dell'applicativo SkillMatrix è un \gls{front-end} \gls{rest}. Un \gls{front-end} di quest tipo ha diversi vantaggi, come la modularità e portabilità che si può ottenere da client a server.\\
-Con un tipo di architettura come questo, infatti, il client ed il server rimangono fortemente separati, limitando le chiamate a dei singoli punti di accesso del server. Questa modularità consente una maggiore manutenibilità di entrambe le parti, garantendo allo stesso modo delle interfacce comuni per i client che vogliono comunicare con il server \gls{rest}.\\
-Per creare un client \gls{rest}, si ha bisogno di:
-\begin{itemize}
-	\item un client \gls{http};
-	\item le \gls{uri} delle risorse a cui vogliamo accedere;
-	\item la capacità di interpretare il formato delle rappresentazione delle risorse.
-\end{itemize}
-In definitiva, il server mette a disposizione delle risorse e le operazioni con cui è possibile manipolare tali risorse. Solitamente, e per quanto riguarda SkillMatrix, le operazioni che vengono "pubblicizzate" da un server con questa architettura sono le classiche \gls{crud}.\\
-Trattandosi di un client che dialoga con il server attraverso protocollo \gls{http}, le richieste da utilizzare per gestire le risorse tramite operazioni \gls{crud} saranno i verbi \gls{http} standard, ovvero:
-\begin{itemize}
-	\item GET;
-	\item POST;
-	\item PUT;
-	\item DELETE.
-\end{itemize}
-Rispettivamente, questi verbi consentono di visualizzare i dati della risorsa, di modificarli, di inserire una nuova risorsa o di cancellarla. Ovviamente, a seconda della risorsa e dei permessi del client, certe operazioni possono essere possibili o no (ad esempio, un utente senza privilegi di amministrazione può non avere il permesso di eliminare una risorsa).\\
-In questo tipo di architettura, il client deve utilizzare questi verbi \gls{http} per comunicare con il server. Le risposte del server sono riassunte in uno specifico codice di stato, il quale esprime se l'operazione è andata a buon fine, se ci sono stati degli errori di trasmissione o semplicemente trasmette ulteriori informazioni al client. Tali codici di errore sono fondamentali per il client, il quale deve modificare il suo stato interno in base al codice ritornato in risposta dal server. Per fare un esempio, il tipico comportamento di un client che ha richiesto la visualizzazione di una risorsa è, in caso di successo, l'effettivo caricamento delle informazioni della risorsa in una pagina; in caso di errore, ad esempio una risorsa non presente, il client deve sapersi adattare a tale errore e mostrare visivamente quale errore si è presentato, per informare l'utente.
-
-\subsection{Architettura Generale}
-%ANGULAR MVC E 2-WAY DATA BINDING
-
-\subsection{AngularJS best practice}
