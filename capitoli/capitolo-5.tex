@@ -8,6 +8,11 @@
 \label{cap:progettazione-codifica}
 %**************************************************************
 
+\intro{Breve introduzione al capitolo}\\
+Il capitolo descrive le scelte architetturali adottate dal \emph{framework} utilizzato e il loro utilizzo all'interno del progetto. Inoltre viene presentata la lista delle \gls{api} definite per il \gls{back-end}.
+
+%**************************************************************
+
 \section{Progettazione Architetturale}
 
 \subsection{Front-end REST}
@@ -19,7 +24,7 @@ Per creare un client \gls{rest}, si ha bisogno di:
 	\item le \gls{uri}\glsfirstoccur\  delle risorse a cui vogliamo accedere;
 	\item la capacità di interpretare il formato delle rappresentazione delle risorse.
 \end{itemize}
-In definitiva, il server mette a disposizione delle risorse e le operazioni con cui è possibile manipolare tali risorse. Solitamente, e per quanto riguarda SkillMatrix, le operazioni che vengono "pubblicizzate" da un server con questa architettura sono le classiche \gls{crud}.\\
+In definitiva, il server mette a disposizione delle risorse e le operazioni con cui è possibile manipolare tali risorse. Solitamente, e per quanto riguarda \emph{SkillMatrix}, le operazioni che vengono "pubblicizzate" da un server con questa architettura sono le classiche \gls{crud}.\\
 Trattandosi di un client che dialoga con il server attraverso protocollo \gls{http}, le richieste da utilizzare per gestire le risorse tramite operazioni \gls{crud} saranno i verbi \gls{http} standard, ovvero:
 \begin{itemize}
 	\item GET;
@@ -33,19 +38,19 @@ In questo tipo di architettura, il client deve utilizzare questi verbi \gls{http
 %**************************************************************
 
 \section{Architettura di AngularJS}
-AngularJS è stato il framework maggiormente utilizzato in questo stage e mi ha consentito di implementare l'intero progetto agilmente.\\
-Alla base del framework, è collocato il design pattern \gls{mvc}, leggermente modificato per adattarsi alle funzionalità di AngularJS. Il design pattern che ne risulta è qualcosa di più flessibile del classico \gls{mvc}, consentendo agli sviluppatori una maggior libertà di utilizzo.\\
+AngularJS è stato il \emph{framework} maggiormente utilizzato in questo Stage e mi ha consentito di implementare l'intero progetto agilmente.\\
+Alla base del \emph{framework}, è collocato il \emph{design pattern} \gls{mvc}, leggermente modificato per adattarsi alle funzionalità di AngularJS. Il \emph{design pattern} che ne risulta è qualcosa di più flessibile del classico \gls{mvc}, consentendo agli sviluppatori una maggior libertà di utilizzo.\\
 Ovviamente ci sono delle direttive e delle \emph{best practice} consigliate, soprattutto se si intende creare un \gls{front-end} davvero \gls{rest}-ful.
 
 \subsection{Model}
-In AngularJS, il "`\emph{model}"' è realizzato con precise strutture dati. Innanzitutto, la logica di business dell'applicazione si colloca nei cosiddetti \emph{servizi}. I servizi sono dei \emph{singleton} istanziati con tecnica \emph{lazy}, ovvero alla prima invocazione. In queste strutture è collocata tutta la logica che è indipendente dalla \emph{view}, puntando al suo massimo riutilizzo.\\
-Differentemente dai controller, le \emph{Factory} dei servizi vengono richiamate dal sistema di \emph{Dependendcy Injection}. Questo avviene passando come argomento al construttore di una struttura il nome del servizio da richiamare; sarà poi compito dell'\emph{injector} di AngularJS richiamare la corretta \emph{factory} del servizio richiesto.\\
-I servizi vegono utilizzati inoltre (e soprattutto) per gestire i dati sensibili dell'utenza e dei vari oggetti presenti nel \gls{back-end}. Sono loro, infatti, gli esecutori materiali delle richieste \gls{rest} al \gls{back-end}, grazie alle direttive apposite, come \textbf{\$http} e \textbf{\$resource}; i dati risultanti verranno poi forniti alle viste, se necessario, passando per gli adeguati controller.
+In AngularJS, il \emph{"model"} è realizzato con precise strutture dati. Innanzitutto, la logica di business dell'applicazione si colloca nei cosiddetti \emph{servizi}. I servizi sono dei \emph{singleton} istanziati con tecnica \emph{lazy}, ovvero alla prima invocazione. In queste strutture è collocata tutta la logica che è indipendente dalla \emph{view}, puntando al suo massimo riutilizzo.\\
+Differentemente dai \emph{controller}, le \emph{Factory} dei servizi vengono richiamate dal sistema di \emph{Dependendcy Injection}. Questo avviene passando come argomento al construttore di una struttura il nome del servizio da richiamare; sarà poi compito dell'\emph{injector} di AngularJS richiamare la corretta \emph{factory} del servizio richiesto.\\
+I servizi vegono utilizzati inoltre (e soprattutto) per gestire i dati sensibili dell'utenza e dei vari oggetti presenti nel \gls{back-end}. Sono loro, infatti, gli esecutori materiali delle richieste \gls{rest} al \gls{back-end}, grazie alle direttive apposite, come \textbf{\$http} e \textbf{\$resource}; i dati risultanti verranno poi forniti alle viste, se necessario, passando per gli adeguati \emph{controller}.
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.7\columnwidth]{concepts-module-service} 
-    \caption{Esempio di legame tra vista-controller-servizio}
+    \caption{Esempio di legame tra vista-\emph{controller}-servizio}
 \end{figure}
 
 \subsection{View}
@@ -60,21 +65,21 @@ Oltre a questa funzionalità, AngularJS mette a disposizione una grande varietà
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.9\columnwidth]{concepts-databinding1} 
-    \caption{Esempio di Template di una vista e Data Binding}
+    \caption{Esempio di \emph{template} di una vista e Data Binding}
 \end{figure}
 
 \subsection{Controller}
-I controller in AngularJS sono ciò che implementa la logica applicativa. Vengono legati al \emph{template} di una pagina tramite la direttiva \textbf{ng-controller} posta all'interno di un elemento \gls{html}. Così facendo, si invoca il costruttore del controller designato; lo \emph{scope} del controller appena creato è l'elemento in cui è stato dichiarato e gli eventuali nodi figli dell'elemento stesso.\\
-Il principale scopo dei controller è di esporre funzionalità alle espressioni ed alle direttive utilizzate all'interno delle pagine web. Questo si ottiene aggiungendo metodi e proprietà all'oggetto \textbf{\$scope} che verrà condiviso con la vista. Questo oggetto in particolare permette di realizzare il cosiddetto \emph{view-model}, ovvero quella parte del \emph{model} che verrà presentata alla \emph{view}. Inoltre, tutte le proprietà associate al controller saranno rese disponibili al \emph{template}, nello \emph{scope} che compete al controller.
+I \emph{controller} in AngularJS sono ciò che implementa la logica applicativa. Vengono legati al \emph{template} di una pagina tramite la direttiva \textbf{ng-controller} posta all'interno di un elemento \gls{html}. Così facendo, si invoca il costruttore del \emph{controller} designato; lo \emph{scope} del \emph{controller} appena creato è l'elemento in cui è stato dichiarato e gli eventuali nodi figli dell'elemento stesso.\\
+Il principale scopo dei \emph{controller} è di esporre funzionalità alle espressioni ed alle direttive utilizzate all'interno delle pagine web. Questo si ottiene aggiungendo metodi e proprietà all'oggetto \textbf{\$scope} che verrà condiviso con la vista. Questo oggetto in particolare permette di realizzare il cosiddetto \emph{view-model}, ovvero quella parte del \emph{model} che verrà presentata alla \emph{view}. Inoltre, tutte le proprietà associate al \emph{controller} saranno rese disponibili al \emph{template}, nello \emph{scope} che compete al \emph{controller}.
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.75\columnwidth]{concepts-databinding2} 
-    \caption{Esempio di legame tra template e Controller}
+    \caption{Esempio di legame tra \emph{template} e \emph{Controller}}
 \end{figure}
 
 \subsection{Two-way Data Binding}
-Una funzionalità importante che AngularJS espone è il cosiddetto \emph{Two Way Data Binding}. Si parla di \emph{legame doppio tra dati} quando una variabile del modello è legata ad un elemento che può cambiare ed al contempo mostrare il contenuto della variabile stessa. In una vista di AngularJS, ogniqualvolta un elemento che applica il \emph{Two Way Data Binding} viene modificato, il corrispondente campo nel modello viene notificato e aggiornato correttamente.\\
+Una funzionalità importante che AngularJS espone è il cosiddetto \emph{Two-Way Data Binding}. Si parla di \emph{legame doppio tra dati} quando una variabile del modello è legata ad un elemento che può cambiare ed al contempo mostrare il contenuto della variabile stessa. In una vista di AngularJS, ogniqualvolta un elemento che applica il \emph{Two-Way Data Binding} viene modificato, il corrispondente campo nel modello viene notificato e aggiornato correttamente.\\
 In AngularJS, si usa la direttiva \textbf{ng-model} per legare una variabile del modello ad un elemento \gls{html} che può sia mostrare il suo valore, che modificarlo.
 
 \begin{figure}[H] 
@@ -84,14 +89,14 @@ In AngularJS, si usa la direttiva \textbf{ng-model} per legare una variabile del
 \end{figure}
 
 \subsection{Dependency Injection}
-\emph{Dependency Injection} è un design pattern creato per gestire e risolvere le varie dipendenze tra più moduli software, e viene utilizzato all'interno di questo particale \emph{framework} JavaScript.\\
+\emph{Dependency Injection} è un \emph{design pattern} creato per gestire e risolvere le varie dipendenze tra più moduli software, e viene utilizzato all'interno di questo particale \emph{framework} JavaScript.\\
 La responsabilità di fornire le varie componenti richieste dalle dipendenze è demandata al sottosistema di gestione delle iniziezioni di AngularJS. Ogni volta che si dichiara una componente, viene registrata al modulo corrispondente; in questo modo, il sistema di gestione delle dipendenze può riconoscere la componente ed usarla dove è richiesto.\\
 Quando è richiesta una dipendenza, l'iniettore controlla il nome con cui è stata richiesta e la cerca nelle dipendenze registrate nel modulo, per iniettarla dove richiesto, se presente.
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.7\columnwidth]{concepts-module-injector} 
-    \caption{Esempio di configurazione di una factory per l'iniettore}
+    \caption{Esempio di configurazione di una \emph{factory} per l'iniettore}
 \end{figure}
 
 %**************************************************************
@@ -423,7 +428,7 @@ file \gls{json} contenente le modifiche da applicare al progetto
 
 
 \section{Stub Back-end}
-Il progetto di stage ha avuto come oggetto la realizzazione di un \gls{front-end} gestionale, senza però avere al contempo un \gls{back-end} funzionante. Per le verifiche funzionali, quindi, ho avuto bisogno di realizzare un \gls{back-end} fittizio, il quale mi consentisse di effettuare chiamate alle \gls{api} concordate con il Responsabile di Progetto per il \gls{back-end} vero e proprio.\\
+Il progetto di Stage ha avuto come oggetto la realizzazione di un \gls{front-end} gestionale, senza però avere al contempo un \gls{back-end} funzionante. Per le verifiche funzionali, quindi, ho avuto bisogno di realizzare un \gls{back-end} fittizio, il quale mi consentisse di effettuare chiamate alle \gls{api} concordate con il Responsabile di Progetto per il \gls{back-end} vero e proprio.\\
 Per realizzare questo \gls{back-end} sono ricorso a delle feature fornite dalle librerie di AngularJS adibite al testing di unità. Durante il testing delle funzionalità di una componente, le richieste ad un server funzionante vengono sostituite con una chiamata ad hoc che deve rispettare certe precondizioni e che restituisce dei dati prestabiliti. Il concetto del \gls{back-end} di \gls{stub}\glsfirstoccur\  che ho utilizzato è lo stesso. In particolare, grazie all'utilizzo di espressioni regolari per filtrare le chiamate \gls{rest}, sono stato in grado di intercettare tali chiamate e di farle gestire al mio \gls{back-end} ad hoc, con risposte prestabilite.\\
 Tutto ciò è stato possibile gran parte grazie al servizio \textbf{\$httpBackend} di AngularJS, il quale contiene metodi di intercettazione di chiamate \gls{rest} e di gestione di richieste e risposte (e relativi \emph{header}) \gls{http}. Il frammento sottostante è un esempio di una chiamata \gls{http} gestita dal \gls{back-end} di \gls{stub}:
 
@@ -473,10 +478,10 @@ $httpBackend.whenGET(/\/api\/\d.\d\/users\/\w*\/qualification/)
 
 %**************************************************************
 \section{Codifica}
-A causa del ciclo di vita \emph{Agile} adottato nello sviluppo di questo progetto, la progettazione e la codifica sono andate di pari passo. La suddivisione del lavoro in \emph{user stories} e l'utilizzo della \emph{kanban} hanno reso molto più disciplinata l'applicazione della metodologia \emph{Agile}, mantenendo comunque la flessibilità e gli aspetti positivi di questo ciclo di vita software. Infatti, \emph{Agile} aumenta molto l'interazione tra proponente e sviluppatore, stimolando l'acquisizione di \emph{feedback} rapidi, cosa molto importante soprattutto in un contesto di stage, a mio avviso.
+A causa del ciclo di vita \emph{Agile} adottato nello sviluppo di questo progetto, la progettazione e la codifica sono andate di pari passo. La suddivisione del lavoro in \emph{User Stories} e l'utilizzo della \emph{kanban} hanno reso molto più disciplinata l'applicazione della metodologia \emph{Agile}, mantenendo comunque la flessibilità e gli aspetti positivi di questo ciclo di vita software. Infatti, \emph{Agile} aumenta molto l'interazione tra proponente e sviluppatore, stimolando l'acquisizione di \emph{feedback} rapidi, cosa molto importante soprattutto in un contesto di Stage, a mio avviso.
 
 \subsection{Callback e Promesse JavaScript}
-Una delle peculiarità di JavaScript è la gestione delle funzioni. Infatti, in questo linguaggio e nei suoi framework, le funzioni sono considerate degli \emph{oggetti} veri e propri. Ciò consente ad un programmatore alcune operazioni particolari con le funzioni, come ad esempio il passaggio di una funzione come argomento di un'altra funzione.\\
+Una delle peculiarità di JavaScript è la gestione delle funzioni. Infatti, in questo linguaggio e nei suoi \emph{framework}, le funzioni sono considerate degli \emph{oggetti} veri e propri. Ciò consente ad un programmatore alcune operazioni particolari con le funzioni, come ad esempio il passaggio di una funzione come argomento di un'altra funzione.\\
 Da questo principio nascono le \emph{callback}, ovvero l'atto di richiamare all'interno di una funzione, un'altra funzione passata come argomento. Ad esempio:
 \begin{verbatim}
 function calcola(func, arg1, arg2) {
@@ -515,8 +520,8 @@ Lo stato di una \emph{promessa}, inoltre, stabilisce se questa è stata risolta 
 Inolte è possibile concatenare più \emph{promesse} in modo controllato, così da creare una catena asincrona di esecuzione di funzioni, ma senza causare una diminuzione di chiarezza nel codice. In più, se una \emph{promessa} all'interno della catena solleva un'eccezione, sistematicamente l'errore viene gestito localmente o propagato al chiamante, con un maggior controllo nell'esecuzione.
 
 \subsubsection{Promesse nel progetto}
-Come presentato nella sezione precedente, le \emph{promesse} possono venir utilizzate per gestire in modo asincrono le chiamate \gls{ajax}. Ciò è vero e largamente utilizzato anche nel framework AngularJS, dove le \emph{promesse} sono parte integrante delle direttive \textbf{\$http} e \textbf{\$resource}. Infatti, queste direttive utilizzano gli stessi costrutti derivanti dalla libreria \textbf{Q} di Kriskowal\footcite{site:q}, sia per la risoluzione delle \emph{promesse} che per la loro gestione degli errori.\\
-In particolare, la direttiva \textbf{\$http} mi è stata fondamentale per realizzare le richieste \gls{rest} e per la loro gestione tra \emph{servizi} e \emph{controller}. Qui sotto, un esempio di applicazione della direttiva \textbf{\$http} nel progetto di SkillMatrix.
+Come presentato nella sezione precedente, le \emph{promesse} possono venir utilizzate per gestire in modo asincrono le chiamate \gls{ajax}. Ciò è vero e largamente utilizzato anche nel \emph{framework} AngularJS, dove le \emph{promesse} sono parte integrante delle direttive \textbf{\$http} e \textbf{\$resource}. Infatti, queste direttive utilizzano gli stessi costrutti derivanti dalla libreria \textbf{Q} di Kriskowal\footcite{site:q}, sia per la risoluzione delle \emph{promesse} che per la loro gestione degli errori.\\
+In particolare, la direttiva \textbf{\$http} mi è stata fondamentale per realizzare le richieste \gls{rest} e per la loro gestione tra \emph{servizi} e \emph{controller}. Qui sotto, un esempio di applicazione della direttiva \textbf{\$http} nel progetto di \emph{SkillMatrix}.
 \begin{verbatim}
 expFactory.getExperiences = function(username) {
   return $http
@@ -528,7 +533,7 @@ expFactory.getExperiences = function(username) {
 Vado ora ad illustrare i diagrammi di attività delle funzionalità principali di \emph{SkillMatrix}. Tali diagrammi fanno riferimento al linguaggio di modellazione \gls{uml}.
 
 \subsubsection{Attività generali}
-\begin{figure}[!h] 
+\begin{figure}[!ht] 
     \centering 
     \includegraphics[width=0.8\columnwidth]{usecase/activity_dashboard} 
     \caption{Diagramma di attività generale di \emph{SkillMatrix}}
@@ -538,7 +543,7 @@ Dopo aver effettuato il \emph{login} con successo al sistema, si viene reindiriz
 \begin{itemize}
 	\item esperienze professionali;
 	\item titoli di studio e abilitazioni professionali (qualificazioni);
-	\item skill;
+	\item \emph{skill};
 	\item progetti associati;
 	\item logout.
 \end{itemize}
@@ -548,16 +553,16 @@ Le prime opzioni portano alla pagina di gestione corrispondente, mentre il pulsa
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.8\columnwidth]{usecase/activity_skill} 
-    \caption{Diagramma di attività di gestione delle skill di \emph{SkillMatrix}}
+    \caption{Diagramma di attività di gestione delle \emph{skill} di \emph{SkillMatrix}}
 \end{figure}
 Questo diagramma delle attività è più specifico del precedente ed illustra le attività eseguibili nella pagina di gestione delle \emph{skill}.\\
-Una volta giunti a questa pagina, si può decidere di filtrare la visualizzazione a seconda del livello di skill che si desidera visualizzare, sia questo \emph{Junior}, \emph{Intermediate} o \emph{Senior}, oppure una combinazione dei tre. La vista è aggiornata in \emph{real time}, dato che il filtraggio dei dati avviene in locale sulla macchina dell'utente, a seconda dei parametri selezionati.\\
-Oltre alla visualizzazione, l'utente può inserire una nuova skill nel sistema. Qui, per poter inserire una skill valida, l'utente deve specificare:
+Una volta giunti a questa pagina, si può decidere di filtrare la visualizzazione a seconda del livello di \emph{skill} che si desidera visualizzare, sia questo \emph{Junior}, \emph{Intermediate} o \emph{Senior}, oppure una combinazione dei tre. La vista è aggiornata in \emph{real time}, dato che il filtraggio dei dati avviene in locale sulla macchina dell'utente, a seconda dei parametri selezionati.\\
+Oltre alla visualizzazione, l'utente può inserire una nuova \emph{skill} nel sistema. Qui, per poter inserire una \emph{skill} valida, l'utente deve specificare:
 \begin{itemize}
 	\item Area, ad esempio \emph{Java};
 	\item Ambito, ad esempio \emph{J2EE};
 	\item Dominio, ad esempio \emph{Tomcat};
-	\item Competenze, ovvero le versioni di competenza della skill;
-	\item Livello, ovvero il livello di competenza della skill, ad esempio \emph{Junior}.
+	\item Competenze, ovvero le versioni di competenza della \emph{skill};
+	\item Livello, ovvero il livello di competenza della \emph{skill}, ad esempio \emph{Junior}.
 \end{itemize}
-Dopo aver compilato i campi necessari per l'inserimento, l'utente può richiedere il salvataggio della skill. Se la skill non è considerata valida (perché manca qualche parametro oppure i dati inseriti non sono validi), l'applicazione segnala tali invalidità tramite dei messaggi \emph{popup} e richiede il corretto inserimento. Se invece l'utente seleziona il pulsante di \emph{reset}, l'utente può reinserire dei nuovi dati della skill. Se infine la skill è considerata valida, l'utente viene riportato alla pagina di gestione delle skill, aggiornata con la nuova skill appena inserita.
+Dopo aver compilato i campi necessari per l'inserimento, l'utente può richiedere il salvataggio della \emph{skill}. Se la \emph{skill} non è considerata valida (perché manca qualche parametro oppure i dati inseriti non sono validi), l'applicazione segnala tali invalidità tramite dei messaggi \emph{popup} e richiede il corretto inserimento. Se invece l'utente seleziona il pulsante di \emph{reset}, l'utente può reinserire dei nuovi dati della \emph{skill}. Se infine la \emph{skill} è considerata valida, l'utente viene riportato alla pagina di gestione delle \emph{skill}, aggiornata con la nuova \emph{skill} appena inserita.
