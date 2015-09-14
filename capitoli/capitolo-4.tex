@@ -13,7 +13,7 @@
 \section{Casi d'uso}
 
 Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
-I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
+I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml}\glsfirstoccur\  dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
 
 %\begin{figure}[!h] 
 %    \centering 
@@ -39,7 +39,7 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 \usecaseactors{Utente non autenticato}
 \usecasepre{l'utente non ha effettuato il login in SkillMatrix e deve possedere credenziali valide}
 \usecasedesc{l'utente fornisce dei dati validi di accesso nella pagina di Login e viene reindirizzato alla pagina di gestione del profilo}
-\usecasepost{le credenziali di accesso sono state verificate e l'utente è stato reindirizzato alla DASHBOARD}
+\usecasepost{le credenziali di accesso sono state verificate e l'utente è stato reindirizzato alla \emph{dashboard}}
 \label{uc:autenticazione}
 \end{usecase}
 
@@ -105,7 +105,7 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 \usecaseactors{Utente autenticato}
 \usecasepre{l'utente deve aver effettuato il login presso SkillMatrix ed avere una sessione attiva}
 \usecasedesc{se l'utente, all'interno del dominio, effettua la ricerca di una risorsa non presente, il sistema informa l'utente di questa mancanza e fornisce istruzioni per la segnalazione}
-\usecasepost{l'utente visualizza la pagina di segnalazione di risorsa non presente e decide se segnalare la mancanza o tornare alla DASHBOARD}
+\usecasepost{l'utente visualizza la pagina di segnalazione di risorsa non presente e decide se segnalare la mancanza o tornare alla \emph{dashboard}}
 \label{uc:lista_progetti}
 \end{usecase}
 
@@ -163,46 +163,46 @@ RFN-9 & L'utente autenticato deve poter effettuare il logout dal sistema & UC9 \
 \hline
 RFN-10 & L'utente deve poter visualizzare i propri titoli di studio e/o abilitazioni professionali una volta effettuato il login & UC6 \\
 \hline
-RFN-11 & L'utente deve poter inserire un nuovo titolo di studio o un'abilitazione professionale nel sistema & UCN \\
+RFN-11 & L'utente deve poter inserire un nuovo titolo di studio o un'abilitazione professionale nel sistema & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 RFN-12 & L'utente deve poter visualizzare le proprie skill una volta effettuato il login & UC5 \\
 \hline
-RFN-12.1 & L'utente deve poter filtrare le skill visualizzate per livello di competenza & UCN \\
+RFN-12.1 & L'utente deve poter filtrare le skill visualizzate per livello di competenza & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-RFN-12.2 & L'utente deve poter inserire una nuova skill nel sistema & UCN \\
+RFN-12.2 & L'utente deve poter inserire una nuova skill nel sistema & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 RFN-13 & L'utente deve poter visualizzare i progetti ad esso associati una volta effettuato il login & UC7 \\
 \hline
-RFN-13.1 & L'utente deve poter visualizzare quale progetto necessita di registrazione nel sistema & UCN \\
+RFN-13.1 & L'utente deve poter visualizzare quale progetto necessita di registrazione nel sistema & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-RFN-14 & L'utente deve poter visualizzare le informazioni dettagliate di un singolo progetto & UCN \\
+RFN-14 & L'utente deve poter visualizzare le informazioni dettagliate di un singolo progetto & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 RFN-15 & L'utente deve poter visualizzare le proprie esperienze professionali una volta effettuato il login al sistema & UC4 \\
 \hline
-RFN-16 & L'utente deve poter inserire una nuova esperienza professionale nel sistema & UCN \\
+RFN-16 & L'utente deve poter inserire una nuova esperienza professionale nel sistema & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-RFD-1 & Il sistema deve implementare una struttura gerarchica & UCN \\
+RFD-1 & Il sistema deve implementare una struttura gerarchica & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-RFD-1.1 & L'interfaccia mostrata in base al tipo di ogni utente deve essere adattata al tipo dello stesso & UCN \\
+RFD-1.1 & L'interfaccia mostrata in base al tipo di ogni utente deve essere adattata al tipo dello stesso & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-RFD-1.1.1 & L'amministratore di un progetto deve poter vedere le persone assegnate a quel progetto & UCN \\
+RFD-1.1.1 & L'amministratore di un progetto deve poter vedere le persone assegnate a quel progetto & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-RFD-2 & L'utente deve ricevere un feedback nell'interfaccia ogni volta che avvenga un errore di comunicazione col server & UCN \\
+RFD-2 & L'utente deve ricevere un feedback nell'interfaccia ogni volta che avvenga un errore di comunicazione col server & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-RFO-1 & Per tutti i dati presentati tramite lista va implementato l'infinite scroll & UCN \\
+RFO-1 & Per tutti i dati presentati tramite lista va implementato l'infinite scroll & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-RFO-2 & L'utente deve poter visualizzare la quantità di progetti che richiedono registrazione tramite notifica nella dashboard & UCN \\
+RFO-2 & L'utente deve poter visualizzare la quantità di progetti che richiedono registrazione tramite notifica nella dashboard & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 \end{tabularx}
@@ -243,13 +243,13 @@ RVN-4 & L'approccio di sviluppo deve essere Test Driven & Piano di Progetto \\
 \hline
 RVN-5 & Devono essere realizzate una o più componenti che simulino il \gls{back-end} in assenza di un server funzionante & - \\
 \hline
-RVN-6 & Le API definite devono rispettare il paradigma REST/HATEOAS & Piano di Progetto \\
+RVN-6 & Le \gls{api} definite devono rispettare il paradigma \gls{rest}/\gls{hateoas}\glsfirstoccur & Piano di Progetto \\
 \hline
-RVN-6.1 & L'interfaccia deve poter manipolare correttamente gli header HTTP & - \\
+RVN-6.1 & L'interfaccia deve poter manipolare correttamente gli header \gls{http}\glsfirstoccur & - \\
 \hline
 RVN-7 & L'assegnamento dei ticket deve essere eseguito tramite il sistema kanban (JIRA) & - \\
 \hline
-RVN-8 & Il repository da utilizzare deve essere la configurazione aziendale di Atlassian STASH & - \\
+RVN-8 & Il \emph{repository} da utilizzare deve essere la configurazione aziendale di Atlassian STASH & - \\
 \hline
 RVN-9 & Lo schema dei dati associati ad un utente deve essere preso da schema.org & - \\
 \hline

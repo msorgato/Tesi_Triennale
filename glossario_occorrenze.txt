@@ -1,0 +1,62 @@
+Sommario
+	front-end *
+	API *
+	back-end *
+
+Sez. Azienda
+	governance *
+	ICT *
+	compliance *
+	
+
+Idea 
+	Spring *
+	REST *
+
+Vincoli Tecnologici
+	CSS *
+	HTML *
+	E2E *
+
+Test Driven Developement
+	MVC *
+
+Tecnologie di sviluppo
+	SPA *
+	CDN *
+
+JIRA
+	SOAP *
+
+Ambiente di Sviluppo
+	IDE *
+
+NPM
+	NPM *
+
+Fase: implementazione
+	CRUD *
+
+Casi d'uso 
+	UML *
+
+Requisiti
+	HATEOAS *
+	HTTP *
+	
+Front-end REST
+	URI *
+
+View
+	DOM *
+
+API
+	JSON *
+
+Stub back-end
+	stub *
+
+Callback e promesse 
+	AJAX *
+
+

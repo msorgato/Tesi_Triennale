@@ -8,24 +8,24 @@
 \label{cap:introduzione}
 %**************************************************************
 
-Introduzione al contesto applicativo.\\
+%Introduzione al contesto applicativo.\\
 
-\noindent Esempio di utilizzo di un termine nel glossario \\
+%\noindent Esempio di utilizzo di un termine nel glossario \\
 %\gls{api}. \\
 
-\noindent Esempio di citazione in linea \\
-\cite{site:agile-manifesto}. \\
+%\noindent Esempio di citazione in linea \\
+%\cite{site:agile-manifesto}. \\
 
-\noindent Esempio di citazione nel pie' di pagina \\
-citazione\footcite{womak:lean-thinking} \\
+%\noindent Esempio di citazione nel pie' di pagina \\
+%citazione\footcite{womak:lean-thinking} \\
 
 %**************************************************************
 \section{L'azienda}
 
-Dal 1999 IKS focalizza il proprio agire per fornire ai Clienti soluzioni abilitanti per la realizzazione di servizi di e-business, nell’ambito della sicurezza e della \gls{governance} \gls{ict}, il tutto con un approccio rivolto all’ottimizzazione.\\
+Dal 1999 IKS focalizza il proprio agire per fornire ai Clienti soluzioni abilitanti per la realizzazione di servizi di e-business, nell’ambito della sicurezza e della \gls{governance}\glsfirstoccur\  \gls{ict}\glsfirstoccur\ , il tutto con un approccio rivolto all’ottimizzazione.\\
 Sin dall’inizio, l’azienda investe su temi strategici per l’\gls{ict}: sicurezza informatica, automazione e \gls{governance} di infrastrutture, sviluppo di soluzioni software complesse e tecnologicamente innovative, ottimizzazione di architetture informatiche di alto livello.\\
 La propensione all’innovazione ed il costante investimento nella formazione permettono alla società a metà degli anni Duemila di affermarsi a livello nazionale con sedi a Padova, Milano e Roma e di diventare il riferimento tecnologico di aziende di alto livello che affidano all’infrastruttura \gls{ict} applicazioni e servizi business critical.\\
-Grazie alla propria vocazione innovativa ed al continuo sviluppo, IKS oggi si presenta come un gruppo aziendale in grado di fornire supporto su temi che spaziano dalla \gls{compliance} all’ottimizzazione di processi di filiera, dal WEB 2.0 all’energy management.
+Grazie alla propria vocazione innovativa ed al continuo sviluppo, IKS oggi si presenta come un gruppo aziendale in grado di fornire supporto su temi che spaziano dalla \gls{compliance}\glsfirstoccur\  all’ottimizzazione di processi di filiera, dal WEB 2.0 all’energy management.
 
 \begin{figure}[H] 
     \centering 
@@ -52,7 +52,7 @@ Progettare e costruire un’applicazione a valore aggiunto significa conoscere l
 
 Il progetto \emph{SkillMatrix} nasce come strumento di gestione interna delle competenze dei dipendenti e dei progetti presenti in azienda. L'obiettivo di tale progetto è una migliore organizzazione del personale dedicato ai vari progetti, con una conseguente maggiore efficienza ed efficacia nell'assegnazione dei ruoli nei processi ed attività. Fino ad ora, all'interno di IKS, tale compito veniva svolto dalla consultazione e modifica di un foglio elettronico \emph{Excel}. Questa soluzione, oltre ad essere poco pratica e difficilmente manutenibile, ha portato all'esigenza di uno strumento più specifico ed espandibile. Da qui la creazione del progetto \emph{SkillMatrix}.\\
 Lo strumento \emph{SkillMatrix} è pensato per essere utilizzato da diverse tipologie di utenti, dal singolo sviluppatore al project manager.\\
-L'applicazione sarà composta da un \gls{front-end} realizzato in \emph{AngularJS}, un \gls{back-end} realizzato tramite \gls{spring} e un database di persistenza. L'attività di Stage ha riguardato la realizzazione del \gls{front-end} e la definizione delle \gls{api} \gls{rest} del \gls{back-end}.\\
+L'applicazione sarà composta da un \gls{front-end} realizzato in \emph{AngularJS}, un \gls{back-end} realizzato tramite \gls{spring}\glsfirstoccur\  e un database di persistenza. L'attività di Stage ha riguardato la realizzazione del \gls{front-end} e la definizione delle \gls{api} \gls{rest}\glsfirstoccur\  del \gls{back-end}.\\
 L'utente finale sviluppatore può vedere \emph{SkillMatrix} come una sorta di curriculum digitale ampliato, in cui poter inserire le proprie competenze riconosciute, le esperienze acquisite ed i progetti a cui ha preso parte. Nella propria \emph{dashboard}, l'utente finale può gestire le proprie informazioni e richiedere l'inserimento di nuove entità, come nuovi progetti a cui ha preso parte, nuove skill acquisite, certificazioni esterne o interne o altri titoli formativi e le sue esperienze lavorative pregresse.\\ 
 Chi ha compiti di gestione (ad esempio la figura del Responsabile di progetto), utilizza lo strumento per vedere quali risorse può utilizzare per un dato progetto. In base alle competenze richieste può quindi consultare quali risorse può richiedere per svolgere il progetto con maggior efficienza ed efficacia.\\ 
 Si prefissa quindi come obiettivo la creazione di un portale aziendale unificato per una migliore gestione del personale ed il suo dislocamento all’interno dei progetti aziendali, oltre che alla gestione dei curricula vitae del personale aziendale.\\
@@ -71,8 +71,8 @@ I vincoli sullo stack tecnologico da utilizzare nell'implementazione di \emph{Sk
 Tali strumenti sono:
 \begin{itemize}
 	\item \emph{AngularJS}, framework JavaScript per la scrittura di applicazioni web \gls{front-end};
-	\item \emph{Bootstrap}, libreria \gls{css} grafica per gestire presentazione e formattazione di pagine web \gls{html};
-	\item \emph{Jasmine}, framework JavaScript utilizzato per la scrittura di test, soprattutto di unità ed \gls{e2e}. 
+	\item \emph{Bootstrap}, libreria \gls{css}\glsfirstoccur\  grafica per gestire presentazione e formattazione di pagine web \gls{html}\glsfirstoccur;
+	\item \emph{Jasmine}, framework JavaScript utilizzato per la scrittura di test, soprattutto di unità ed \gls{e2e}\glsfirstoccur. 
 \end{itemize}
 La scelta di queste tecnologie ovviamente non è casuale. Nello sviluppo di applicazioni web con \emph{AngularJS}, lo stack tecnologico utilizzato più diffusamente è proprio questo. L'utilizzo di \emph{Jasmine} è quasi obbligatorio, data la sua immediatezza di configurazione con \emph{AngularJS} e la filosofia stessa del framework \gls{front-end}, che è stato pensato appunto per rendere il testing più semplice.\\
 \emph{Bootstrap}, d'altro canto, è estremamente facile da integrare con qualsiasi strumento che si basi su \gls{html} per fornire le sue viste, e quindi anche con lo stack corrente.
@@ -82,7 +82,7 @@ Per la realizzazione di questo progetto sono state impiegate le 8 settimane di l
 Di queste ore, le prime 40 sono state dedicate alla mia formazione sulle tecnologie adottate nel progetto e nell'istruzione sull'utilizzo degli strumenti aziendali, per poi continuare con la progettazione e lo sviluppo vero e proprio del progetto.
 
 \subsection{Organizzativi}
-La realizzazione del progetto prevedeva un ciclo di vita basato sullo stile Agile. Questo è l'approccio maggiormente utilizzato all'interno dell'azienda, caratterizzato dall'applicazione dei principi dell'\emph{Agile programming} con consultazione di una \emph{kanban}.\\
+La realizzazione del progetto prevedeva un ciclo di vita basato sullo stile Agile\footcite{site:agile-manifesto}. Questo è l'approccio maggiormente utilizzato all'interno dell'azienda, caratterizzato dall'applicazione dei principi dell'\emph{Agile programming} con consultazione di una \emph{kanban}.\\
 Inoltre, i progetti aziendali di IKS sono gestiti da un sistema di versionamento di Atlassian, compreso il progetto oggetto del mio stage.\\
 I vincoli organizzativi si sono quindi concretizzati attraverso la comprensione e l'utilizzo degli strumenti JIRA e STASH utilizzati all'interno dell'azienda, i quali assolvono appunto i compiti di gestione, rispettivamente, di una \emph{Agile kanban} e di un repository aziendale.
 

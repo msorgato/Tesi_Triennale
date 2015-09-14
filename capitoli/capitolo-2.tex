@@ -4,8 +4,8 @@
 % !TEX spellcheck = it-IT
 
 %**************************************************************
-\chapter{Processi e tecnologie}
-\label{cap:processi-tecnologie}
+\chapter{Metodologie e tecnologie}
+\label{cap:metodologie-tecnologie}
 %**************************************************************
 
 \intro{Breve introduzione al capitolo}\\
@@ -86,7 +86,7 @@ Il framework AngularJS è stato creato appositamente per rendere il testing più
 
 \subsubsection{Test di Unità}
 La tipologia di test utilizzata maggiormente con questo approccio è l'insieme dei test di unità. Questa tipologia di test si prefissa di verificare il corretto funzionamento di una singola unità software. Per unità si intende normalmente il minimo componente di un programma dotato di funzionamento autonomo; a seconda del paradigma di programmazione o linguaggio di programmazione, questo può corrispondere per esempio a una singola funzione nella programmazione procedurale, o una singola classe o un singolo metodo nella programmazione a oggetti.\\
-Applicando questo concetto al progetto in analisi, i test di unità scritti verificano la correttezza di ogni funzione scritta nei vari componenti del pattern \gls{mvc} di Angular. 
+Applicando questo concetto al progetto in analisi, i test di unità scritti verificano la correttezza di ogni funzione scritta nei vari componenti del pattern \gls{mvc}\glsfirstoccur\  di Angular. 
 
 \subsubsection{Test di scenario}
 I test di scenario, conosciuti anche come \gls{e2e}, sono una metodologia di test utilizzata per verificare il corretto flusso di un’applicazione, se questa si comporta come pianificato dall’inizio alla fine del flusso. L’obiettivo che sta alla base della creazione di test di scenario è di identificare  le dipendenze di sistema e di assicurarsi che le informazioni (e il loro formato) siano passate correttamente tra le varie componenti del sistema.
@@ -101,7 +101,7 @@ I test di scenario, conosciuti anche come \gls{e2e}, sono una metodologia di tes
     \includegraphics[width=0.3\columnwidth]{angularjs_logo} 
     \caption{Logo di AngularJS}
 \end{figure}
-AngularJS è un framework open source JavaScript mantenuto da Google, utilizzato prevalentemente nello sviluppo di \gls{spa}. Attraverso questo framework è possibile aumentare le capacità del classico linguaggio \gls{html} (o simili, quali Jade), per poter realizzare Web Application responsive e solide. 
+AngularJS è un framework open source JavaScript mantenuto da Google, utilizzato prevalentemente nello sviluppo di \gls{spa}\glsfirstoccur. Attraverso questo framework è possibile aumentare le capacità del classico linguaggio \gls{html} (o simili, quali Jade), per poter realizzare Web Application responsive e solide. 
 L’obiettivo di questo framework, infatti, è quello di semplificare lo sviluppo ed il testing di applicazioni scritte in JavaScript, fornendo una base di librerie e direttive utili ad implementare un applicazione di architettura \gls{mvc}.\\
 Come altri framework utilizzati con lo stesso fine, una delle feature più utili ed interessanti di Angular è il cosiddetto “two-way data binding”. Tramite l’utilizzo di direttive proprie del framework, uno sviluppatore può “legare” una variabile della vista ad una particolare entità di un modello, facendo sì che i dati visualizzati rappresentino costantemente il dato aggiornato; dualmente, tramite Angular, se si utilizza questo legame è possibile aggiornare i dati del modello direttamente dalla vista.\\
 Angular inoltre fornisce degli strumenti per astrarre e realizzare la comunicazione con un back-end. Tramite Angular, infatti, è possibile creare una web app totalmente RESTful, tramite l’utilizzo delle \textbf{\$resource} e dei servizi \textbf{\$http} messi a disposizione dal framework.
@@ -113,7 +113,7 @@ Angular inoltre fornisce degli strumenti per astrarre e realizzare la comunicazi
     \caption{Logo di Bootstrap}
 \end{figure}
 \emph{Bootstrap} è una raccolta di strumenti liberi per la creazione di siti e applicazioni per il Web. Essa contiene modelli di progettazione basati su \gls{html} e \gls{css}, sia per la tipografia, che per le varie componenti dell'interfaccia, come moduli, bottoni e navigazione, e altri componenti dell'interfaccia, così come alcune estensioni opzionali di JavaScript.
-Includendo Bootstrap nella propria pagina web (sia da \gls{cdn} che da codice sorgente), è possibile usufruire di tutta una serie di agevolazioni nello sviluppo di una pagina, dalla stilistica di base della pagina stessa, agli effetti di stransizione \gls{css} avanzati, al layout stesso. 
+Includendo Bootstrap nella propria pagina web (sia da \gls{cdn}\glsfirstoccur\  che da codice sorgente), è possibile usufruire di tutta una serie di agevolazioni nello sviluppo di una pagina, dalla stilistica di base della pagina stessa, agli effetti di stransizione \gls{css} avanzati, al layout stesso. 
 Bootstrap includ una libreria \gls{css} di base con una grande varietà di classi da applicare agli elementi di \gls{html} statico, più un file \emph{JavaScript} con le funzioni \emph{jQuery} basilari di comportamento, entrambi facilmente estendibili dallo sviluppatore con file personalizzati. è una raccolta di strumenti liberi per la creazione di siti e applicazioni per il Web. Essa contiene modelli di progettazione basati su \gls{html} e \gls{css}, sia per la tipografia, che per le varie componenti dell'interfaccia, come moduli, bottoni e navigazione, e altri componenti dell'interfaccia, così come alcune estensioni opzionali di \emph{JavaScript}.
 Includendo Bootstrap nella propria pagina web (sia da \gls{cdn} che da codice sorgente), è possibile usufruire di tutta una serie di agevolazioni nello sviluppo di una pagina, dalla stilistica di base della pagina stessa, agli effetti di stransizione \gls{css} avanzati, al layout stesso. 
 Bootstrap includ una libreria \gls{css} di base con una grande varietà di classi da applicare agli elementi di \emph{html} statico, più un file \emph{JavaScript} con le funzioni \emph{jQuery} basilari di comportamento, entrambi facilmente estendibili dallo sviluppatore con file personalizzati.
@@ -141,7 +141,7 @@ risparmiando così tempo e risorse;
     \caption{Logo di JIRA}
 \end{figure}
 Jira è un prodotto proprietario finalizzato al tracciamento dei compiti, sviluppato da Atlassian dal 2002\footcite{atlassian:jira}. Esso fornisce il tracciamento di bug, compiti e funzionalità di project management. JIRA non è un acronimo, bensì il troncamento della parola giapponese \emph{Gojira}.\\
-JIRA è scritto in Java e si basa sul sistema di inversione di controllo sviluppato da Pico, su Apache OFBiz e lo stack tecnologico di WebWork 1. JIRA supporta diverse chiamate procedurali remote, quali ad esempio \gls{rest} e \gls{soap}. JIRA si integra con i programmi di versionamento Clearcase, CVS, Git, Mercurial, Perforce, Subversion e Team Foundation Server.\\
+JIRA è scritto in Java e si basa sul sistema di inversione di controllo sviluppato da Pico, su Apache OFBiz e lo stack tecnologico di WebWork 1. JIRA supporta diverse chiamate procedurali remote, quali ad esempio \gls{rest} e \gls{soap}\glsfirstoccur. JIRA si integra con i programmi di versionamento Clearcase, CVS, Git, Mercurial, Perforce, Subversion e Team Foundation Server.\\
 Secondo i dati di Atlassian, JIRA viene usato nel tracciamento delle attività e nel project management da oltre 25,000 utenti in 122 paesi nel mondo. Alcune delle organizzazioni che usano JIRA sono Fedora Commons, Hibernate, Honeywell Aerospace, JBoss, Linden Lab, Skype, Spring Framework e The Apache Software Fundation.
 \begin{figure}[H] 
     \centering 
@@ -177,7 +177,7 @@ Ogni pull request non viene integrata finché non viene approvata dal responsabi
     \includegraphics[width=0.4\columnwidth]{phpstorm_logo} 
     \caption{Logo di PhPStorm}
 \end{figure}
-PhpStorm è un \gls{ide} commerciale sviluppato e distribuito da JetBrains e si basa su IntelliJ IDEA.
+PhpStorm è un \gls{ide}\glsfirstoccur\  commerciale sviluppato e distribuito da JetBrains e si basa su IntelliJ IDEA.
 PhpStorm fornisce un editor per PHP, HTML e JavaScript, aiutando lo sviluppatore con correzioni e segnalazioni in real time e molte feature di refactoring del codice.\\
 PhpStorm è basato su IntelliJ IDEA, che è scritto in Java. Oltre alle funzioni core dell’IDE, l’utente può estendere le funzionalità installando i numerosi plugin disponibili o scrivendone alcuni propri.\\
 Oltre ad offrire un editor responsivo ed efficiente, PhpStorm si presta molto bene per lo sviluppo di applicazioni in JavaScript, supportando i maggiori framework del linguaggio, come soprattutto AngularJS e NodeJS. 
@@ -233,7 +233,7 @@ Nella “vista” che viene creata dal plugin, è possibile visualizzare quali l
     \includegraphics[width=0.4\columnwidth]{npm_logo} 
     \caption{Logo di NPM}
 \end{figure}
-Acronimo di \emph{Node Package Manager}. Come da definizione, npm è un gestore di pacchetti e moduli JavaScript, basato su Node.js.\\ 
+Acronimo di \emph{Node Package Manager}. Come da definizione, \gls{npm}\glsfirstoccur\  è un gestore di pacchetti e moduli JavaScript, basato su Node.js.\\ 
 Tramite npm è possibile cercare ed installare localmente ad un progetto o globalmente una grande serie di utilità pubblicate nel registro stesso di \gls{npm}. Oltre a questo, è possibile gestire ed aggiornare facilmente ogni pacchetto installato tramite semplici comandi da terminale.
 La gestione dei pacchetti di npm consente di suddividere i moduli in funzionalità, per garantire così il riutilizzo atomico e una maggiore manutenibilità dei singoli file, così come la condivisione con altri sviluppatori attraverso il registro \gls{npm}. 
 

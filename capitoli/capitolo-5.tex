@@ -11,12 +11,12 @@
 \section{Progettazione Architetturale}
 
 \subsection{Front-end REST}
-La struttura base dell'applicativo SkillMatrix è un \gls{front-end} \gls{rest}. Un \gls{front-end} di quest tipo ha diversi vantaggi, come la modularità e portabilità che si può ottenere da client a server.\\
+La struttura base dell'applicativo \emph{SkillMatrix} è un \gls{front-end} \gls{rest}. Un \gls{front-end} di quest tipo ha diversi vantaggi, come la modularità e portabilità che si può ottenere da client a server.\\
 Con un tipo di architettura come questo, infatti, il client ed il server rimangono fortemente separati, limitando le chiamate a dei singoli punti di accesso del server. Questa modularità consente una maggiore manutenibilità di entrambe le parti, garantendo allo stesso modo delle interfacce comuni per i client che vogliono comunicare con il server \gls{rest}.\\
 Per creare un client \gls{rest}, si ha bisogno di:
 \begin{itemize}
 	\item un client \gls{http};
-	\item le \gls{uri} delle risorse a cui vogliamo accedere;
+	\item le \gls{uri}\glsfirstoccur\  delle risorse a cui vogliamo accedere;
 	\item la capacità di interpretare il formato delle rappresentazione delle risorse.
 \end{itemize}
 In definitiva, il server mette a disposizione delle risorse e le operazioni con cui è possibile manipolare tali risorse. Solitamente, e per quanto riguarda SkillMatrix, le operazioni che vengono "pubblicizzate" da un server con questa architettura sono le classiche \gls{crud}.\\
@@ -55,7 +55,7 @@ La classica dicitura di AngularJS per identificare un'espressione da interpretar
 {{ espressione }}
 \end{verbatim}
 All'interno di questa dicitura, ogni espressione viene valutata e il suo risultato viene renderizzato nella pagina web. Se, ad esempio, nel \emph{template} \gls{html} si inserisce un'operazione matematica all'interno delle doppie graffe, una volta renderizzata la pagina il risultato dell'operazione (se possibile) verrà mostrato al posto dell'espressione.\\
-Oltre a questa funzionalità, AngularJS mette a disposizione una grande varietà di direttive per manipolare il \gls{dom}, come iteratori per scorrere insiemi di dati o filtri da applicare ad una collezione per limitarne la visualizzazione.
+Oltre a questa funzionalità, AngularJS mette a disposizione una grande varietà di direttive per manipolare il \gls{dom}\glsfirstoccur, come iteratori per scorrere insiemi di dati o filtri da applicare ad una collezione per limitarne la visualizzazione.
 
 \begin{figure}[!h] 
     \centering 
@@ -112,7 +112,7 @@ GET
 nessuno
 \paragraph{Risposte}
 \begin{itemize}
-	\item[200] la risposta contiene il \gls{json} compatto con le proprietà utente;
+	\item[200] la risposta contiene il \gls{json}\glsfirstoccur\  compatto con le proprietà utente;
 	\item[404] se l'utente non è presente;
 	\item[403] se l'utente non è autorizzato ad accedere all'informazione.
 \end{itemize}
@@ -424,7 +424,7 @@ file \gls{json} contenente le modifiche da applicare al progetto
 
 \section{Stub Back-end}
 Il progetto di stage ha avuto come oggetto la realizzazione di un \gls{front-end} gestionale, senza però avere al contempo un \gls{back-end} funzionante. Per le verifiche funzionali, quindi, ho avuto bisogno di realizzare un \gls{back-end} fittizio, il quale mi consentisse di effettuare chiamate alle \gls{api} concordate con il Responsabile di Progetto per il \gls{back-end} vero e proprio.\\
-Per realizzare questo \gls{back-end} sono ricorso a delle feature fornite dalle librerie di AngularJS adibite al testing di unità. Durante il testing delle funzionalità di una componente, le richieste ad un server funzionante vengono sostituite con una chiamata ad hoc che deve rispettare certe precondizioni e che restituisce dei dati prestabiliti. Il concetto del \gls{back-end} di \gls{stub} che ho utilizzato è lo stesso. In particolare, grazie all'utilizzo di espressioni regolari per filtrare le chiamate \gls{rest}, sono stato in grado di intercettare tali chiamate e di farle gestire al mio \gls{back-end} ad hoc, con risposte prestabilite.\\
+Per realizzare questo \gls{back-end} sono ricorso a delle feature fornite dalle librerie di AngularJS adibite al testing di unità. Durante il testing delle funzionalità di una componente, le richieste ad un server funzionante vengono sostituite con una chiamata ad hoc che deve rispettare certe precondizioni e che restituisce dei dati prestabiliti. Il concetto del \gls{back-end} di \gls{stub}\glsfirstoccur\  che ho utilizzato è lo stesso. In particolare, grazie all'utilizzo di espressioni regolari per filtrare le chiamate \gls{rest}, sono stato in grado di intercettare tali chiamate e di farle gestire al mio \gls{back-end} ad hoc, con risposte prestabilite.\\
 Tutto ciò è stato possibile gran parte grazie al servizio \textbf{\$httpBackend} di AngularJS, il quale contiene metodi di intercettazione di chiamate \gls{rest} e di gestione di richieste e risposte (e relativi \emph{header}) \gls{http}. Il frammento sottostante è un esempio di una chiamata \gls{http} gestita dal \gls{back-end} di \gls{stub}:
 
 \begin{verbatim}
@@ -470,40 +470,6 @@ $httpBackend.whenGET(/\/api\/\d.\d\/users\/\w*\/qualification/)
   return [getStatus, getData, getHeaders];
 });
 \end{verbatim} 
-%Oltre a permettermi di controllare l'effettivo funzionamento dell'applicazione, un \gls{backend} di %questo tipo mi consente inoltre di verificare 
-
-%**************************************************************
-
-\section{Tecnologie e strumenti}
-\label{sec:tecnologie-strumenti}
-
-Di seguito viene data una panoramica delle tecnologie e strumenti utilizzati.
-
-\subsection*{Tecnologia 1}
-Descrizione Tecnologia 1.
-
-\subsection*{Tecnologia 2}
-Descrizione Tecnologia 2
-
-%**************************************************************
-\section{Ciclo di vita del software}
-\label{sec:ciclo-vita-software}
-
-%**************************************************************
-\section{Progettazione}
-\label{sec:progettazione}
-
-\subsubsection{Namespace 1} %**************************
-Descrizione namespace 1.
-
-\begin{namespacedesc}
-    \classdesc{Classe 1}{Descrizione classe 1}
-    \classdesc{Classe 2}{Descrizione classe 2}
-\end{namespacedesc}
-
-
-%**************************************************************
-\section{Design Pattern utilizzati}
 
 %**************************************************************
 \section{Codifica}
@@ -518,7 +484,7 @@ function calcola(func, arg1, arg2) {
 }
 \end{verbatim}
 Nell'esempio soprastante, la funzione \emph{func} richiamata all'interno di \emph{calcola}, è stata passata come argomento ed utilizza come propri argomenti \emph{arg1} ed \emph{arg2}. Questa proprietà permette anche, ad esempio, di richiamare selettivamente una \emph{callback} piuttosto che un'altra, o cambiandone gli argomenti a seconda degli stati dell'esecuzione.\\
-Le \emph{callback} sono state utilizzate estensivamente anche nel campo della programmazione asincrona e della gestione di eventi. Infatti, una \emph{callback} può essere invocata alla fine di un'acquisizione dati, per gestire i dati ritornati, a prescindere dal momento in cui questi saranno disponibili. Il caso tipico di esempio è una chiamata \gls{ajax}, dove la \emph{callback} viene passata come parametro alla chiamata e viene invocata al termine dell'acquisizione dei dati dalla rete.\\
+Le \emph{callback} sono state utilizzate estensivamente anche nel campo della programmazione asincrona e della gestione di eventi. Infatti, una \emph{callback} può essere invocata alla fine di un'acquisizione dati, per gestire i dati ritornati, a prescindere dal momento in cui questi saranno disponibili. Il caso tipico di esempio è una chiamata \gls{ajax}\glsfirstoccur, dove la \emph{callback} viene passata come parametro alla chiamata e viene invocata al termine dell'acquisizione dei dati dalla rete.\\
 Purtroppo, però, le \emph{callback} presentano alcuni aspetti negativi:
 \begin{itemize}
 	\item scarsa leggibilità del codice e conseguente difficoltà di manutenzione;
